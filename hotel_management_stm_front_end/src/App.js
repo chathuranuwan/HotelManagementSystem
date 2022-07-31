@@ -13,6 +13,7 @@ import CustomerDetails from "./components/CustomerDetails";
 import SignIn from "./components/pages/SignIn";
 import Form2 from "./Form2";
 import Customerview from "./components/Customerview";
+import AdminDashboard from "./components/pages/AdminDashboard";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
 
           <Route path="/vehicles" element={<Search />} />
           <Route path="/sign-up" element={<Form />} />
+          <Route path="/admin-dashboard" element={<AdminDashboard />} />
           <Route path="/manage-menu" element={<ManageMenu />} />
           <Route path="/addfoods" element={<AddFoods />} />
 
