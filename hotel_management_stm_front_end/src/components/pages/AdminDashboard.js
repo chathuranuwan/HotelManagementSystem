@@ -5,7 +5,7 @@ function AdminDashboard() {
     <div>
       <div class="d-flex flex-column bg-white flex-lg-row h-lg-full bg-surface-secondary">
         <nav
-          class="navbar show navbar-vertical h-lg-screen navbar-expand-lg px-0 py-3 navbar-light border-bottom border-bottom-lg-0 border-end-lg"
+          class="navbar1 show navbar-vertical h-lg-screen navbar-expand-lg px-0 py-3 navbar-light bg-white border-bottom border-bottom-lg-0 border-end-lg"
           id="navbarVertical"
         >
           <div class="container-fluid">
@@ -39,7 +39,7 @@ function AdminDashboard() {
                     {" "}
                     <img
                       alt="Image Placeholder"
-                      src="https://images.unsplash.com/photo-1548142813-c348350df52b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=3&w=256&h=256&q=80"
+                      src=""
                       class="avatar avatar- rounded-circle"
                     />{" "}
                     <span class="avatar-child avatar-badge bg-success"></span>{" "}
@@ -129,7 +129,7 @@ function AdminDashboard() {
                         {" "}
                         <img
                           alt="Image Placeholder"
-                          src="https://images.unsplash.com/photo-1548142813-c348350df52b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=3&w=256&h=256&q=80"
+                          src=""
                           class="avatar rounded-circle"
                         />{" "}
                         <span class="position-absolute bottom-2 end-2 transform translate-x-1/2 translate-y-1/2 border-2 border-solid border-current w-3 h-3 bg-success rounded-circle"></span>{" "}
@@ -189,7 +189,7 @@ function AdminDashboard() {
                         {" "}
                         <img
                           alt="..."
-                          src="https://images.unsplash.com/photo-1610899922902-c471ae684eff?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=3&w=256&h=256&q=80"
+                          src=""
                           class="avatar rounded-circle"
                         />{" "}
                         <span class="position-absolute bottom-2 end-2 transform translate-x-1/2 translate-y-1/2 border-2 border-solid border-current w-3 h-3 bg-danger rounded-circle"></span>{" "}
@@ -382,7 +382,7 @@ function AdminDashboard() {
                           {" "}
                           <img
                             alt="..."
-                            src="https://images.unsplash.com/photo-1502823403499-6ccfcf4fb453?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=3&w=256&h=256&q=80"
+                            src=""
                             class="avatar avatar-sm rounded-circle me-2"
                           />{" "}
                           <a class="text-heading font-semibold" href="#">
@@ -419,7 +419,7 @@ function AdminDashboard() {
                           {" "}
                           <img
                             alt="..."
-                            src="https://images.unsplash.com/photo-1610271340738-726e199f0258?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=3&w=256&h=256&q=80"
+                            src=""
                             class="avatar avatar-sm rounded-circle me-2"
                           />{" "}
                           <a class="text-heading font-semibold" href="#">
@@ -456,7 +456,7 @@ function AdminDashboard() {
                           {" "}
                           <img
                             alt="..."
-                            src="https://images.unsplash.com/photo-1610878722345-79c5eaf6a48c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=3&w=256&h=256&q=80"
+                            src=""
                             class="avatar avatar-sm rounded-circle me-2"
                           />{" "}
                           <a class="text-heading font-semibold" href="#">
@@ -493,7 +493,7 @@ function AdminDashboard() {
                           {" "}
                           <img
                             alt="..."
-                            src="https://images.unsplash.com/photo-1612422656768-d5e4ec31fac0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=3&w=256&h=256&q=80"
+                            src=""
                             class="avatar avatar-sm rounded-circle me-2"
                           />{" "}
                           <a class="text-heading font-semibold" href="#">
@@ -530,7 +530,7 @@ function AdminDashboard() {
                           {" "}
                           <img
                             alt="..."
-                            src="https://images.unsplash.com/photo-1608976328267-e673d3ec06ce?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=3&w=256&h=256&q=80"
+                            src=""
                             class="avatar avatar-sm rounded-circle me-2"
                           />{" "}
                           <a class="text-heading font-semibold" href="#">
