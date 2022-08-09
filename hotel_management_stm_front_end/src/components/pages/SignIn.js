@@ -21,7 +21,7 @@ const SignIn = ({ submitForm }) => {
     try {
       await authService.login(username, password).then(
         () => {
-          navigate("/manage-menu");
+          navigate("/admin-dashboard");
           window.location.reload();
         },
         (error) => {

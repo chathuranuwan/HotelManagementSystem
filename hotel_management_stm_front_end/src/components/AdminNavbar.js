@@ -29,7 +29,7 @@ function AdminNavbar() {
       <nav className="navbar">
         <div className="navbar-container">
           <Link
-            to="/manage-menu"
+            to="/admin-dashboard"
             className="navbar-logo"
             onClick={closeMobileMenu}
           >
@@ -50,7 +50,7 @@ function AdminNavbar() {
             </li>
             <li className="nav-item">
               <Link
-                to="/booking"
+                to="/orders"
                 className="nav-links"
                 onClick={closeMobileMenu}
               >
@@ -58,7 +58,6 @@ function AdminNavbar() {
               </Link>
             </li>
           </ul>
-          {button && <Button buttonStyle="btn--outline">SIGNOUT</Button>}
         </div>
       </nav>
     </>

@@ -23,7 +23,7 @@ function App() {
           <Route path="/" exact element={<Home />} />
           <Route path="/services" element={<Services />} />
 
-          <Route path="/vehicles" element={<Search />} />
+          <Route path="/menu" element={<Search />} />
           <Route path="/sign-up" element={<Form />} />
           <Route path="/admin-dashboard" element={<AdminDashboard />} />
           <Route path="/manage-menu" element={<ManageMenu />} />
@@ -31,7 +31,7 @@ function App() {
 
           <Route path="/CustomerDetails" element={<CustomerDetails />} />
           <Route path="/sign-in" element={<Form2 />} />
-          <Route path="/booking" element={<Customerview />} />
+          <Route path="/orders" element={<Customerview />} />
         </Routes>
       </Router>
     </>

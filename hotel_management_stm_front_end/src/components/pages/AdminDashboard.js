@@ -56,11 +56,11 @@ function AdminDashboard() {
                   <a href="#" class="dropdown-item">
                     Settings
                   </a>{" "}
-                  <a href="#" class="dropdown-item">
+                  <a href="/sign-in" class="dropdown-item">
                     Billing
                   </a>
                   <hr class="dropdown-divider" />{" "}
-                  <a href="#" class="dropdown-item">
+                  <a href="/sign-in" class="dropdown-item">
                     Logout
                   </a>{" "}
                 </div>
@@ -77,7 +77,7 @@ function AdminDashboard() {
                 </li>
                 <li class="nav-item">
                   {" "}
-                  <a class="nav-link" href="#">
+                  <a class="nav-link" href="/orders">
                     {" "}
                     <i class="bi bi-bar-chart"></i> Orders{" "}
                   </a>{" "}
@@ -94,7 +94,7 @@ function AdminDashboard() {
                 </li>
                 <li class="nav-item">
                   {" "}
-                  <a class="nav-link" href="#">
+                  <a class="nav-link" href="/manage-menu">
                     {" "}
                     <i class="bi bi-bookmarks"></i> Menu Manage{" "}
                   </a>{" "}
@@ -224,7 +224,7 @@ function AdminDashboard() {
                 </li>
                 <li class="nav-item">
                   {" "}
-                  <a class="nav-link" href="#">
+                  <a class="nav-link" href="/sign-in">
                     {" "}
                     <i class="bi bi-box-arrow-left"></i> Logout{" "}
                   </a>{" "}
