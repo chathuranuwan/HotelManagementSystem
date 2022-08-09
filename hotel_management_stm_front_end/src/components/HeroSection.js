@@ -22,7 +22,7 @@ function HeroSection() {
     let obj = {};
     localStorage.setItem("myvalues", JSON.stringify(obj));
 
-    navigate("/vehicles");
+    navigate("/menu");
     return;
   };
 
