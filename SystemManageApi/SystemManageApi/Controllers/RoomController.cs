@@ -31,7 +31,18 @@ namespace SystemManageApi.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Room>>> GetRooms()
         {
-            return await _context.Rooms.ToListAsync();
+            return await _context.Rooms
+                .Select(x => new Room()
+                {
+                    RoomID = x.RoomID,
+                    RoomNumber = x.RoomNumber,
+                    Floor = x.Floor,
+                    Status = x.Status,
+                    Category = x.Category,
+                    ImageName = x.ImageName,
+                    ImageSrc = String.Format("{0}://{1}{2}/Images/{3}", Request.Scheme, Request.Host, Request.PathBase, x.ImageName)
+                })
+                .ToListAsync();
         }
 
         // GET: api/Room/5

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import validateInfo from '../../../validateInfo'
 import "./addRoom.css"
 import axios from "axios";
+import RoomsData from '../roomsDatatable/RoomsData';
 //import DriveFolderUploadOutlinedIcon from "@mui/icons-material/DriveFolderUploadOutlined";
 
 const defaultImage = 'https:/icon-library.com/images/no-image-icon/no-image-icon-0.jpg'
@@ -17,27 +18,12 @@ const initialFieldValues = {
     imageFile:null
 }
 
-export default function AddRoom() {
+export default function AddRoom(props) {
+
+  const {addOrEdit} = props
 
   const [values, setValues] = useState(initialFieldValues)
   const [errors, setErrors] = useState({})
-
-  const roomAPI = (url = 'https://localhost:44389/api/Room/') =>{
-    return{
-        fetchall: () => axios.get(url),
-        create: newRecord => axios.post(url, newRecord),
-        update: (id, updatedRecord) => axios.put(url + id, updatedRecord),
-        delete: id => axios.delete(url + id)
-    }
-  }
-
-  const addOrEdit = (formData, onSuccess) => {
-    roomAPI().create(formData)
-    .then(res =>{
-        onSuccess();
-    })
-    .catch(err => console.log(err))
-  }
 
   const handleInputChange = e =>{
         const { name, value } = e.target;

@@ -17,6 +17,7 @@ import AdminDashboard from "./components/pages/AdminDashboard";
 import AdminSidebar from "./components/AdminSidebar";
 import RoomsData from "./components/AdminComponents/roomsDatatable/RoomsData";
 import AddRoom from "./components/AdminComponents/addRoom/AddRoom";
+import About from "./components/pages/About";
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
           <Route path="/admin-dashboard" element={<AdminDashboard />} />
           <Route path="/manage-menu" element={<ManageMenu />} />
           <Route path="/addfoods" element={<AddFoods />} />
+          <Route path="/about" element={<About />} />
 
           <Route path="/CustomerDetails" element={<CustomerDetails />} />
           <Route path="/sign-in" element={<Form2 />} />

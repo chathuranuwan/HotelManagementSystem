@@ -40,6 +40,13 @@ function Navbar() {
                 Home
               </Link>
             </li>
+
+            <li className="nav-item">
+              <Link to="/about" className="nav-links" onClick={closeMobileMenu}>
+                About
+              </Link>
+            </li>
+            
             <li className="nav-item">
               <Link
                 to="/services"
@@ -55,6 +62,7 @@ function Navbar() {
                 Menu
               </Link>
             </li>
+         
 
             {currentUser ? (
               <li className="nav-item">
