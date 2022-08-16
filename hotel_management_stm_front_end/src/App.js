@@ -14,6 +14,9 @@ import SignIn from "./components/pages/SignIn";
 import Form2 from "./Form2";
 import Customerview from "./components/Customerview";
 import AdminDashboard from "./components/pages/AdminDashboard";
+import AdminSidebar from "./components/AdminSidebar";
+import RoomsData from "./components/AdminComponents/roomsDatatable/RoomsData";
+import AddRoom from "./components/AdminComponents/addRoom/AddRoom";
 
 function App() {
   return (
@@ -32,6 +35,12 @@ function App() {
           <Route path="/CustomerDetails" element={<CustomerDetails />} />
           <Route path="/sign-in" element={<Form2 />} />
           <Route path="/orders" element={<Customerview />} />
+
+          <Route path="/sidebar" element={<AdminSidebar />} />
+
+          <Route path="/Rooms" element={<RoomsData />} />
+          <Route path="/AddRoom" element={<AddRoom />} />
+
         </Routes>
       </Router>
     </>

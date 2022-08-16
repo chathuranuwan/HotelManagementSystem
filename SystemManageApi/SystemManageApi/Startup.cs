@@ -42,10 +42,13 @@ namespace SystemManageApi
             options.UseSqlServer(Configuration.GetConnectionString("DevConnection")));
             
             services.AddDbContext<CustomerDbContext>(options =>
-           options.UseSqlServer(Configuration.GetConnectionString("DevConnection")));
+            options.UseSqlServer(Configuration.GetConnectionString("DevConnection")));
 
             services.AddDbContext<CartDbContext>(options =>
-           options.UseSqlServer(Configuration.GetConnectionString("DevConnection")));
+            options.UseSqlServer(Configuration.GetConnectionString("DevConnection")));
+
+            services.AddDbContext<RoomDbContext>(options =>
+            options.UseSqlServer(Configuration.GetConnectionString("DevConnection")));
 
 
             services.AddDbContext<ApplicationDbContext>(option => option.UseSqlServer(Configuration.GetConnectionString("DevConnection")));
