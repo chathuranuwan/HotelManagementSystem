@@ -18,6 +18,7 @@ import AdminSidebar from "./components/AdminSidebar";
 import RoomsData from "./components/AdminComponents/roomsDatatable/RoomsData";
 import AddRoom from "./components/AdminComponents/addRoom/AddRoom";
 import About from "./components/pages/About";
+import UserRegistration from "./components/pages/UserRegistration";
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
           <Route path="/sign-up" element={<Form />} />
           <Route path="/admin-dashboard" element={<AdminDashboard />} />
           <Route path="/manage-menu" element={<ManageMenu />} />
+          <Route path="/register" element={<UserRegistration />} />
           <Route path="/addfoods" element={<AddFoods />} />
           <Route path="/about" element={<About />} />
 
@@ -42,7 +44,6 @@ function App() {
 
           <Route path="/Rooms" element={<RoomsData />} />
           <Route path="/AddRoom" element={<AddRoom />} />
-
         </Routes>
       </Router>
     </>
