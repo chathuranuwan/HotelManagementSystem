@@ -136,15 +136,15 @@ table div.card2 img {
 }
 
 .card2 img {
-  width: 220px;
-  height: 220px;
-  margin: 20px;
+  width: 220px !important;
+  height: 220px !important;
+  margin: 20px !important;
 }
 
 .form-control {
-  width: 200px;
-  height: 40px;
-  margin: 5px;
+  width: 200px !important;
+  height: 40px !important;
+  margin: 5px !important;
 }
 .labelandsearchbar {
   align-self: center;
@@ -196,21 +196,31 @@ table div.card2 img {
 }
 
 .table-body {
-  margin-top: 20px;
-  margin-left: 40px;
+  margin-top: 40px;
+  margin-left: 80px;
 }
 
-.cart3-img-top {
+.table-body.cart3-img-top {
   width: 220px;
   height: 150px;
   margin: 25px;
 }
 
 .input-group {
-  margin-left: 40px;
+  margin-left: 90px;
   margin-top: 18px;
 }
 
-.input-group.days {
-  margin-top: 0px;
+.input-group-text {
+  width: 30px;
+  height: 30px;
+  border-left: 3px;
 }
+
+.days {
+  margin: 2px;
+}
+/* .input-group.input-group-text {
+  width: 20px;
+  height: 30px;
+} */
