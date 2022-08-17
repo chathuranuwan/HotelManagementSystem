@@ -6,6 +6,7 @@ function About() {
     <div>
          <Navbar />
         //abc
+        //tyftyg
         About
         
         </div>
