@@ -139,11 +139,11 @@ function AdminDashboard() {
                       {" "}
                       <span class="d-block text-sm font-semibold">
                         {" "}
-                        Marie Claire{" "}
+                        Chathura{" "}
                       </span>{" "}
                       <span class="d-block text-xs text-muted font-regular">
                         {" "}
-                        Paris, FR{" "}
+                        Ratnapura{" "}
                       </span>{" "}
                     </div>
                     <div class="ms-auto">
@@ -168,11 +168,11 @@ function AdminDashboard() {
                       {" "}
                       <span class="d-block text-sm font-semibold">
                         {" "}
-                        Michael Jordan{" "}
+                        Manoj{" "}
                       </span>{" "}
                       <span class="d-block text-xs text-muted font-regular">
                         {" "}
-                        Bucharest, RO{" "}
+                        Mathale{" "}
                       </span>{" "}
                     </div>
                     <div class="ms-auto">
@@ -199,11 +199,11 @@ function AdminDashboard() {
                       {" "}
                       <span class="d-block text-sm font-semibold">
                         {" "}
-                        Heather Wright{" "}
+                        Sanduni{" "}
                       </span>{" "}
                       <span class="d-block text-xs text-muted font-regular">
                         {" "}
-                        London, UK{" "}
+                        Badulla{" "}
                       </span>{" "}
                     </div>
                     <div class="ms-auto">
@@ -387,10 +387,10 @@ function AdminDashboard() {
                           />{" "}
                           <a class="text-heading font-semibold" href="#">
                             {" "}
-                            Robert Fox{" "}
+                            Chathura{" "}
                           </a>{" "}
                         </td>
-                        <td> Feb 15, 2021 </td>
+                        <td> May 15, 2022 </td>
                         <td>
                           {" "}
                           <a class="text-heading font-semibold" href="#">
@@ -424,10 +424,10 @@ function AdminDashboard() {
                           />{" "}
                           <a class="text-heading font-semibold" href="#">
                             {" "}
-                            Darlene Robertson{" "}
+                            Manoj{" "}
                           </a>{" "}
                         </td>
-                        <td> Apr 15, 2021 </td>
+                        <td> May 15, 2022 </td>
                         <td>
                           {" "}
                           <a class="text-heading font-semibold" href="#">
@@ -461,10 +461,10 @@ function AdminDashboard() {
                           />{" "}
                           <a class="text-heading font-semibold" href="#">
                             {" "}
-                            Theresa Webb{" "}
+                            Dileeshiya{" "}
                           </a>{" "}
                         </td>
-                        <td> Mar 20, 2021 </td>
+                        <td> Mar 14, 2022 </td>
                         <td>
                           {" "}
                           <a class="text-heading font-semibold" href="#">
@@ -498,10 +498,10 @@ function AdminDashboard() {
                           />{" "}
                           <a class="text-heading font-semibold" href="#">
                             {" "}
-                            Kristin Watson{" "}
+                            Sanduni{" "}
                           </a>{" "}
                         </td>
-                        <td> Feb 15, 2021 </td>
+                        <td> May 10, 2022 </td>
                         <td>
                           {" "}
                           <a class="text-heading font-semibold" href="#">
@@ -535,10 +535,10 @@ function AdminDashboard() {
                           />{" "}
                           <a class="text-heading font-semibold" href="#">
                             {" "}
-                            Cody Fisher{" "}
+                            Kavindu{" "}
                           </a>{" "}
                         </td>
-                        <td> Apr 10, 2021 </td>
+                        <td> Apr 10, 2022 </td>
                         <td>
                           {" "}
                           <a class="text-heading font-semibold" href="#">
