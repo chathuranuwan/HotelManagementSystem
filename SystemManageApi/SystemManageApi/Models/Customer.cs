@@ -24,16 +24,7 @@ namespace SystemManageApi.Models
 
         public int MobileNumber { get; set; }
 
-        [Column(TypeName = "nvarchar(50)")]
-        public string NicNo { get; set; }
-
-        [Column(TypeName = "nvarchar(100)")]
-        public string BillingAddress { get; set; }
-
-        [Column(TypeName = "nvarchar(100)")]
-        public string CustomerCity { get; set; }
-
-        public int PostalCode { get; set; }
+        public int RoomNumber { get; set; }
 
         public int NumberOfItems { get; set; }
 
