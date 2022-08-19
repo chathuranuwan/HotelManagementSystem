@@ -63,13 +63,7 @@ export default function RoomsData() {
         .catch((err) => console.log(err));
   }
 
-  const navigate = useNavigate();
-
-  const navigateToAddRoom = () => {
-  
-    navigate('/AddRoom');
-    
-  }
+ 
   return (
     <>
       <div className="roomsData" >
@@ -80,9 +74,6 @@ export default function RoomsData() {
       </div>
       <div className="container">
       <div className="py-4">
-        <div>
-           <button type="button" class="btn btn-primary" onClick={navigateToAddRoom}>Add Room</button>
-        </div>
         <h3 class="mb-3 text-center">Room Details</h3>
         <table  class="table border shadow text-center" color='blue'>
           <thead class="thead-primary">
