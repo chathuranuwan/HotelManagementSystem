@@ -233,14 +233,37 @@ table div.card2 img {
   background-color: #f2f2f2;
 }
 
-.imgabout {
-  background-image: 
-  url(
-"assets/images/img-about.jpg");
+.Background{
+  background-image: url("./assets/images/background.jpg");
+  align-items: center;
+  margin: 0px;
+  height:800px;
+  width: fit-content;
+  background-position: center center;
+  background-repeat: no-repeat;
   background-size: cover;
-  height: 900px;
-  width:1200px;
-  margin-top: 0px;
+ 
+  font-size: 30px;
   color: #fff;
-  background-repeat:no-repeat; 
+  padding-top: 100px;
+  padding-left: 150px;
+  padding-right: 150px;
+  font-family: "PT Sans" , "sans-serif";
+}
+
+.main-heading{
+  font-size: 70px;
+  font-family:"PT Sans" ;
+  font-weight: 5px;
+  color: #fff;
+}
+
+.main-heading2{
+  color: black;
+  font-size: 50px;
+  margin-top: 100px;
+}
+
+.p1 {
+  font-size: 20px;
 }
