@@ -72,7 +72,7 @@ namespace SystemManageApi.Controllers
             if (room.ImageFile != null)
             {
                 room.ImageName = await SaveImage(room.ImageFile);
-                DeleteImage(room.ImageName);
+                
            
             }
 
