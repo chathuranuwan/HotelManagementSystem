@@ -101,7 +101,7 @@ function AdminDashboard() {
                 </li>
                 <li class="nav-item">
                   {" "}
-                  <a class="nav-link" href="#">
+                  <a class="nav-link" href="/rooms">
                     {" "}
                     <i class="bi bi-people"></i> Rooms Manage{" "}
                   </a>{" "}
