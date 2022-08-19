@@ -21,10 +21,12 @@ const SignIn = ({ submitForm }) => {
     try {
       await authService.login(username, password).then(
         () => {
+          window.alert("you are successfully signed in");
           navigate("/admin-dashboard");
           window.location.reload();
         },
         (error) => {
+          window.alert("you are failed to sign in");
           console.log(error);
         }
       );

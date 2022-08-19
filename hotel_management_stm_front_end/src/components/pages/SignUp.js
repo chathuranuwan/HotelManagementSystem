@@ -18,12 +18,14 @@ const SignUp = ({ submitForm }) => {
     try {
       await authService.signup(username, email, password).then(
         (response) => {
+          window.alert("you are successfully signed up");
           navigate("/sign-in");
 
           console.log("Sign up successfully", response);
         },
 
         (error) => {
+          window.alert("you are failed to sign up");
           console.log(error);
         }
       );

@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import "../App.css";
-import Navbar from "./Navbar";
 import axios from "axios";
 
 export default function Customer(props) {

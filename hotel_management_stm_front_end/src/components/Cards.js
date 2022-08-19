@@ -17,24 +17,24 @@ function Cards() {
             <CardItem
               src="images/Room2.jpg"
               text="Choose a Room that Suits Your Needs"
-              path="/vehicles"
+              path="/Menu"
             />
           </ul>
           <ul className="cards__items">
             <CardItem
               src="images/Room3.jpg"
               text="Choose a Room that Suits Your Needs"
-              path="/vehicles"
+              path="/Menu"
             />
             <CardItem
               src="images/Room4.jpg"
               text="we have a large collection of Rooms"
-              path="/vehicles"
+              path="/Menu"
             />
             <CardItem
               src="images/Room5.jpg"
               text="Choose a Room that Suits Your Needs"
-              path="/vehicles"
+              path="/Menu"
             />
           </ul>
         </div>
