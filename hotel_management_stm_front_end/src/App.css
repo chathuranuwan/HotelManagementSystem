@@ -214,3 +214,19 @@ table div.card2 img {
 .input-group.days {
   margin-top: 0px;
 }
+
+.bg-c-light{
+  background-color: #f2f2f2;
+}
+
+.imgabout {
+  background-image: 
+  url(
+"assets/images/img-about.jpg");
+  background-size: cover;
+  height: 900px;
+  width:1200px;
+  margin-top: 0px;
+  color: #fff;
+  background-repeat:no-repeat; 
+}
