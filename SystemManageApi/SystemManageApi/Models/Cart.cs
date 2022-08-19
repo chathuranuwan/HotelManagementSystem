@@ -14,9 +14,9 @@ namespace SystemManageApi.Models
         [Key]
         public int CartID { get; set; }
 
-       
 
-       
+
+        public int RoomNumber { get; set; }
 
         public int PricePerItem { get; set; }
 

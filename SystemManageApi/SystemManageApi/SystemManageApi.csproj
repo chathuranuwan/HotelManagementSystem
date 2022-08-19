@@ -35,7 +35,6 @@
     <Folder Include="Images\" />
     <Folder Include="Data\" />
     <Folder Include="Images2\" />
-    <Folder Include="Migrations\" />
   </ItemGroup>
 
   <ItemGroup>

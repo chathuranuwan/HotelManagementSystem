@@ -36,11 +36,8 @@ namespace SystemManageApi.Controllers
                  LastName = x.LastName,
                  EmailAddress = x.EmailAddress,
                  MobileNumber = x.MobileNumber,
-                 NicNo = x.NicNo,
-                 BillingAddress = x.BillingAddress,
-                 CustomerCity = x.CustomerCity,
-                 PostalCode = x.PostalCode,
-                 NumberOfItems =x.NumberOfItems,
+                RoomNumber = x.RoomNumber,
+                NumberOfItems =x.NumberOfItems,
                  TotalPrice  =x.TotalPrice,
                 FoodimageSrc = String.Format("{3}", Request.Scheme, Request.Host, Request.PathBase, x.FoodimageName)
 
