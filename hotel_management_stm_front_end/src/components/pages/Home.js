@@ -12,7 +12,7 @@ function Home() {
       <Navbar />
       <HeroSection />
       <Cards />
-      <AspectRatio maxW="560px">
+      <AspectRatio maxW="560px" ml={[550]}>
         <iframe
           src="https://www.youtube.com/embed/6IQCuTEKlCo"
           title="YouTube video player"
@@ -21,7 +21,7 @@ function Home() {
           allowfullscreen
         ></iframe>
       </AspectRatio>
-      <AspectRatio maxW="560px">
+      <AspectRatio maxW="560px" ml={[550]} mb={[20]} mt={[20]}>
         <iframe
           src="https://www.google.com/maps/d/embed?mid=1hPlG1DDduEjwpvBuGn7dGdO0A41u9IAx&ehbc=2E312F"
           width="640"
