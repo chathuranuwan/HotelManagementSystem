@@ -15,7 +15,7 @@ namespace SystemManageApi.Migrations.CustomerDb
 #pragma warning disable 612, 618
             modelBuilder
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
-                .HasAnnotation("ProductVersion", "5.0.11")
+                .HasAnnotation("ProductVersion", "5.0.17")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
             modelBuilder.Entity("SystemManageApi.Models.Customer", b =>
@@ -24,12 +24,6 @@ namespace SystemManageApi.Migrations.CustomerDb
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("BillingAddress")
-                        .HasColumnType("nvarchar(100)");
-
-                    b.Property<string>("CustomerCity")
-                        .HasColumnType("nvarchar(100)");
 
                     b.Property<string>("EmailAddress")
                         .HasColumnType("nvarchar(50)");
@@ -46,13 +40,10 @@ namespace SystemManageApi.Migrations.CustomerDb
                     b.Property<int>("MobileNumber")
                         .HasColumnType("int");
 
-                    b.Property<string>("NicNo")
-                        .HasColumnType("nvarchar(50)");
-
                     b.Property<int>("NumberOfItems")
                         .HasColumnType("int");
 
-                    b.Property<int>("PostalCode")
+                    b.Property<int>("RoomNumber")
                         .HasColumnType("int");
 
                     b.Property<int>("TotalPrice")

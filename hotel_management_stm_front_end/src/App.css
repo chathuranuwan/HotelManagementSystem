@@ -109,7 +109,7 @@ table div.card2 img {
   transition: all 0.4s ease-out;
 }
 
-.vehiclelist-back {
+.cart-back {
   background-color: gray;
   width: 100%;
   align-items: center;
@@ -142,6 +142,7 @@ table div.card2 img {
 }
 
 .form-control {
+  margin-left: 0px !important;
   width: 200px !important;
   height: 40px !important;
   margin: 5px !important;
@@ -189,6 +190,7 @@ table div.card2 img {
 }
 
 .form-label {
+  margin-right: 0px;
   display: inline-block;
   font-size: 0.8rem;
   margin-bottom: 6px;
@@ -209,6 +211,8 @@ table div.card2 img {
 .input-group {
   margin-left: 90px;
   margin-top: 18px;
+  border-style: hidden !important;
+  box-shadow: none !important;
 }
 
 .input-group-text {
@@ -220,7 +224,23 @@ table div.card2 img {
 .days {
   margin: 2px;
 }
-/* .input-group.input-group-text {
+.input-group.input-group-text {
   width: 20px;
   height: 30px;
-} */
+}
+
+.bg-c-light{
+  background-color: #f2f2f2;
+}
+
+.imgabout {
+  background-image: 
+  url(
+"assets/images/img-about.jpg");
+  background-size: cover;
+  height: 900px;
+  width:1200px;
+  margin-top: 0px;
+  color: #fff;
+  background-repeat:no-repeat; 
+}

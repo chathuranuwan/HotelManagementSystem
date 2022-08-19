@@ -2,15 +2,17 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using SystemManageApi.Models;
 
-namespace SystemManageApi.Migrations.CartDb
+namespace SystemManageApi.Migrations.CustomerDb
 {
-    [DbContext(typeof(CartDbContext))]
-    partial class CartDbContextModelSnapshot : ModelSnapshot
+    [DbContext(typeof(CustomerDbContext))]
+    [Migration("20220819090714_CustomerTable")]
+    partial class CustomerTable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -18,20 +20,29 @@ namespace SystemManageApi.Migrations.CartDb
                 .HasAnnotation("ProductVersion", "5.0.17")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("SystemManageApi.Models.Cart", b =>
+            modelBuilder.Entity("SystemManageApi.Models.Customer", b =>
                 {
-                    b.Property<int>("CartID")
+                    b.Property<int>("CustomerID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("FoodsimageName")
+                    b.Property<string>("EmailAddress")
+                        .HasColumnType("nvarchar(50)");
+
+                    b.Property<string>("FirstName")
+                        .HasColumnType("nvarchar(50)");
+
+                    b.Property<string>("FoodimageName")
                         .HasColumnType("nvarchar(100)");
 
-                    b.Property<int>("NumberofItems")
+                    b.Property<string>("LastName")
+                        .HasColumnType("nvarchar(50)");
+
+                    b.Property<int>("MobileNumber")
                         .HasColumnType("int");
 
-                    b.Property<int>("PricePerItem")
+                    b.Property<int>("NumberOfItems")
                         .HasColumnType("int");
 
                     b.Property<int>("RoomNumber")
@@ -40,9 +51,9 @@ namespace SystemManageApi.Migrations.CartDb
                     b.Property<int>("TotalPrice")
                         .HasColumnType("int");
 
-                    b.HasKey("CartID");
+                    b.HasKey("CustomerID");
 
-                    b.ToTable("Carts");
+                    b.ToTable("Customers");
                 });
 #pragma warning restore 612, 618
         }

@@ -2,15 +2,17 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using SystemManageApi.Models;
 
 namespace SystemManageApi.Migrations.CartDb
 {
     [DbContext(typeof(CartDbContext))]
-    partial class CartDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220819090533_CartTable")]
+    partial class CartTable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -32,9 +34,6 @@ namespace SystemManageApi.Migrations.CartDb
                         .HasColumnType("int");
 
                     b.Property<int>("PricePerItem")
-                        .HasColumnType("int");
-
-                    b.Property<int>("RoomNumber")
                         .HasColumnType("int");
 
                     b.Property<int>("TotalPrice")

@@ -2,15 +2,17 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using SystemManageApi.Models;
 
-namespace SystemManageApi.Migrations.CartDb
+namespace SystemManageApi.Migrations.RoomDb
 {
-    [DbContext(typeof(CartDbContext))]
-    partial class CartDbContextModelSnapshot : ModelSnapshot
+    [DbContext(typeof(RoomDbContext))]
+    [Migration("20220819090908_RoomTable")]
+    partial class RoomTable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -18,31 +20,31 @@ namespace SystemManageApi.Migrations.CartDb
                 .HasAnnotation("ProductVersion", "5.0.17")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("SystemManageApi.Models.Cart", b =>
+            modelBuilder.Entity("SystemManageApi.Models.Room", b =>
                 {
-                    b.Property<int>("CartID")
+                    b.Property<int>("RoomID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("FoodsimageName")
+                    b.Property<string>("Category")
+                        .HasColumnType("nvarchar(20)");
+
+                    b.Property<int>("Floor")
+                        .HasColumnType("int");
+
+                    b.Property<string>("ImageName")
                         .HasColumnType("nvarchar(100)");
-
-                    b.Property<int>("NumberofItems")
-                        .HasColumnType("int");
-
-                    b.Property<int>("PricePerItem")
-                        .HasColumnType("int");
 
                     b.Property<int>("RoomNumber")
                         .HasColumnType("int");
 
-                    b.Property<int>("TotalPrice")
-                        .HasColumnType("int");
+                    b.Property<string>("Status")
+                        .HasColumnType("nvarchar(10)");
 
-                    b.HasKey("CartID");
+                    b.HasKey("RoomID");
 
-                    b.ToTable("Carts");
+                    b.ToTable("Rooms");
                 });
 #pragma warning restore 612, 618
         }

@@ -39,10 +39,7 @@ export default function Customerview(props) {
                   <th>Last Name</th>
                   <th>Email Address</th>
                   <th>Mobile Number</th>
-                  <th>Nic no</th>
-                  <th>Billing Address</th>
-                  <th>Customer City</th>
-                  <th>Postal Code</th>
+                  <th>Room Number</th>
                 </tr>
               </thead>
               <tbody>
@@ -61,10 +58,7 @@ export default function Customerview(props) {
                       <td>{customer.lastName}</td>
                       <td>{customer.emailAddress}</td>
                       <th>{customer.mobileNumber}</th>
-                      <th>{customer.nicNo}</th>
-                      <th>{customer.billingAddress}</th>
-                      <th>{customer.customerCity}</th>
-                      <th>{customer.postalCode}</th>
+                      <th>{customer.roomNumber}</th>
                     </tr>
                   );
                 })}

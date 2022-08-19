@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import "./Form.css";
-import SignUp from "./components/pages/SignUp";
 import SignUpSuccess from "./SignUpSuccess";
 import SignIn from "./components/pages/SignIn";
 import Navbar from "./components/Navbar";

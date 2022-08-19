@@ -5,10 +5,10 @@ using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using SystemManageApi.Models;
 
-namespace SystemManageApi.Migrations.CartDb
+namespace SystemManageApi.Migrations.FoodDb
 {
-    [DbContext(typeof(CartDbContext))]
-    partial class CartDbContextModelSnapshot : ModelSnapshot
+    [DbContext(typeof(FoodDbContext))]
+    partial class FoodDbContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)
         {
@@ -18,31 +18,34 @@ namespace SystemManageApi.Migrations.CartDb
                 .HasAnnotation("ProductVersion", "5.0.17")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("SystemManageApi.Models.Cart", b =>
+            modelBuilder.Entity("SystemManageApi.Models.Food", b =>
                 {
-                    b.Property<int>("CartID")
+                    b.Property<int>("FoodID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("FoodsimageName")
+                    b.Property<int>("Availability")
+                        .HasColumnType("int");
+
+                    b.Property<string>("FoodCategory")
+                        .HasColumnType("nvarchar(50)");
+
+                    b.Property<string>("FoodDescription")
                         .HasColumnType("nvarchar(100)");
 
-                    b.Property<int>("NumberofItems")
-                        .HasColumnType("int");
+                    b.Property<string>("ImageName")
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("NameOfFood")
+                        .HasColumnType("nvarchar(50)");
 
                     b.Property<int>("PricePerItem")
                         .HasColumnType("int");
 
-                    b.Property<int>("RoomNumber")
-                        .HasColumnType("int");
+                    b.HasKey("FoodID");
 
-                    b.Property<int>("TotalPrice")
-                        .HasColumnType("int");
-
-                    b.HasKey("CartID");
-
-                    b.ToTable("Carts");
+                    b.ToTable("Foods");
                 });
 #pragma warning restore 612, 618
         }
