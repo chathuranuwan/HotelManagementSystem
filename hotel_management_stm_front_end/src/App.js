@@ -39,8 +39,8 @@ function App() {
 
           <Route path="/sidebar" element={<AdminSidebar />} />
 
-          <Route path="/Rooms" element={<RoomsData />} />
-          <Route path="/AddRoom" element={<AddRoom />} />
+          <Route path="/rooms" element={<RoomsData />} />
+          
        
         </Routes>
       </Router>
