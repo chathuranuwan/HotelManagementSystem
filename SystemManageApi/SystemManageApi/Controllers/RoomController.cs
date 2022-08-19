@@ -37,8 +37,8 @@ namespace SystemManageApi.Controllers
                     RoomID = x.RoomID,
                     RoomNumber = x.RoomNumber,
                     Floor = x.Floor,
-                    Status = x.Status,
                     Category = x.Category,
+                    Status = x.Status,
                     ImageName = x.ImageName,
                     ImageSrc = String.Format("{0}://{1}{2}/Images/{3}", Request.Scheme, Request.Host, Request.PathBase, x.ImageName)
                 })
@@ -62,11 +62,18 @@ namespace SystemManageApi.Controllers
         // PUT: api/Room/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutRoom(int id, Room room)
+        public async Task<IActionResult> PutRoom(int id, [FromForm] Room room)
         {
             if (id != room.RoomID)
             {
                 return BadRequest();
+            }
+
+            if (room.ImageFile != null)
+            {
+                room.ImageName = await SaveImage(room.ImageFile);
+                DeleteImage(room.ImageName);
+           
             }
 
             _context.Entry(room).State = EntityState.Modified;
@@ -113,6 +120,7 @@ namespace SystemManageApi.Controllers
                 return NotFound();
             }
 
+            
             _context.Rooms.Remove(room);
             await _context.SaveChangesAsync();
 
@@ -136,6 +144,15 @@ namespace SystemManageApi.Controllers
             }
 
             return imageName;
+        }
+
+        [NonAction]
+        public void DeleteImage(string imageName)
+        {
+            var imagePath = Path.Combine(_hostEnvironment.ContentRootPath, "Images", imageName);
+            if (System.IO.File.Exists(imagePath))
+                System.IO.File.Delete(imagePath);
+
         }
     }
 }
