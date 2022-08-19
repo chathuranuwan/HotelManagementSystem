@@ -1,7 +1,8 @@
 import React from 'react'
 import Navbar from "../Navbar";
 import "../../App.css";
-
+import ImgAbout from "../../assets/images/img-about.jpg";
+import "./About.css";
 
  
 
@@ -13,27 +14,30 @@ function About() {
       <Navbar />
       
         
-        <section className='about'>
-                
-          <div className =  "container">
+        <div className='about'>
+        <div
+        className="aboutTop"
+        style={{ backgroundImage: "url(${ImgAbout})" }}
+      ></div>     
+          <div className =  "aboutBottom">
             <div className='row'>
               <div className='col-md-12 text-center'>
-              <div  className="imgabout"> 
+              
                           
                 <h1 className='main-heading'>Hotel Grand</h1>
                 <div className = "underline mx-auto"></div>
                 <p> 
                 With a stay at Hotel Grand in Unawatuna, you'll be near the beach, within a 5-minute drive of Unawatuna Beach and Sahana Beach. Featured amenities include complimentary newspapers in the lobby, dry cleaning/laundry services, and a 24-hour front desk. Guests may use a roundtrip airport shuttle for a surcharge, and free self parking is available onsite.
                 </p>
-                    </div>
+                    
                     </div>
               </div>
             </div>
                                      
-        </section>
+        </div>
        
 
-        <section className='about bg-c-light border-top'>
+        <div className='about bg-c-light border-top'>
           <div className =  "container">
             <div className='row'>
               <div className='col-md-12 mb-4 text-center'>
@@ -76,7 +80,7 @@ function About() {
             
           </div>
                   
-        </section>
+        </div>
         </div>
   )
 }
