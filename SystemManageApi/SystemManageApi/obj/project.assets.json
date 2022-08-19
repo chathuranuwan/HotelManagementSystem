@@ -11148,11 +11148,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Manoj Dissanayake\\Desktop\\SP3\\HotelManagementSystem\\SystemManageApi\\SystemManageApi\\SystemManageApi.csproj",
+      "projectUniqueName": "C:\\Users\\Manoj Dissanayake\\Desktop\\SP5\\HotelManagementSystem\\SystemManageApi\\SystemManageApi\\SystemManageApi.csproj",
       "projectName": "SystemManageApi",
-      "projectPath": "C:\\Users\\Manoj Dissanayake\\Desktop\\SP3\\HotelManagementSystem\\SystemManageApi\\SystemManageApi\\SystemManageApi.csproj",
+      "projectPath": "C:\\Users\\Manoj Dissanayake\\Desktop\\SP5\\HotelManagementSystem\\SystemManageApi\\SystemManageApi\\SystemManageApi.csproj",
       "packagesPath": "C:\\Users\\Manoj Dissanayake\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Manoj Dissanayake\\Desktop\\SP3\\HotelManagementSystem\\SystemManageApi\\SystemManageApi\\obj\\",
+      "outputPath": "C:\\Users\\Manoj Dissanayake\\Desktop\\SP5\\HotelManagementSystem\\SystemManageApi\\SystemManageApi\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Manoj Dissanayake\\AppData\\Roaming\\NuGet\\NuGet.Config",
