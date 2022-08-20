@@ -106,18 +106,18 @@ const SystemManageApi = (props) => {
                     method="POST"
                   >
                     <h5>{nameOfFood}</h5>
-                    <span>{availability} Availability</span>
+                    <span>{availability} Available</span>
                     <br />
                     <span>{foodDescription}</span>
                     <br />
                     <span id="perday" name="perday">
-                      LKR {pricePerItem} /PerItem
+                      LKR {pricePerItem}
                     </span>
                     <br />
 
                     <div className="input-group">
                       <div>
-                        <label className="days">Items</label>
+                        <label className="days">Quntity</label>
                       </div>
                       <button
                         type="button"
