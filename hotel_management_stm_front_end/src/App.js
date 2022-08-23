@@ -13,9 +13,9 @@ import Customerview from "./components/Customerview";
 import AdminDashboard from "./components/pages/AdminDashboard";
 import AdminSidebar from "./components/AdminSidebar";
 import RoomsData from "./components/AdminComponents/roomsDatatable/RoomsData";
-import AddRoom from "./components/AdminComponents/addRoom/AddRoom";
 import About from "./components/pages/About";
 import UserRegistration from "./components/pages/UserRegistration";
+import AddRoom from "./components/AdminComponents/addRoom/AddRoom";
 
 function App() {
   return (
@@ -39,8 +39,9 @@ function App() {
 
           <Route path="/sidebar" element={<AdminSidebar />} />
 
-          <Route path="/Rooms" element={<RoomsData />} />
-          <Route path="/AddRoom" element={<AddRoom />} />
+          <Route path="/rooms" element={<RoomsData />} />
+          
+       
         </Routes>
       </Router>
     </>
