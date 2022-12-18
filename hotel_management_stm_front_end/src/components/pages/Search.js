@@ -6,7 +6,7 @@ import { useHistory } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import Customer from "../Customer";
 import { Link } from "react-router-dom";
-import Navbar from "../Navbar";
+import Navbar from "../../Navbar";
 
 function App() {
   const [foods, setFoods] = useState([]);
@@ -43,6 +43,7 @@ function App() {
 
   return (
     <>
+      {" "}
       <Navbar />
       <h1>Food List</h1>
       <div className="col-sm-6 offset-sm-5">
@@ -54,7 +55,6 @@ function App() {
           onChange={(e) => setSearch(e.target.value)}
         />
       </div>
-
       {filteredFoods.map((food, idx) => (
         <SystemManageApi key={idx} {...food} />
       ))}

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Customer from "./Customer";
 import axios from "axios";
-import Navbar from "./Navbar";
+import Navbar from "../Navbar";
 
 export default function CustomerDetails() {
   const [customerDetails, setCustomerDetails] = useState([]);

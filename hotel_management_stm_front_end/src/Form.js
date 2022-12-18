@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./Form.css";
 import SignUp from "./components/pages/SignUp";
 import SignUpSuccess from "./SignUpSuccess";
-import Navbar from "./components/Navbar";
+import Navbar from "./Navbar";
 
 const Form = () => {
   const [isSubmitted, setIsSubmitted] = useState(false);

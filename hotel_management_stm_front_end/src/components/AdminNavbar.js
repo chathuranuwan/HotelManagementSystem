@@ -1,64 +1,128 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import "./Navbar.css";
 
 function AdminNavbar() {
-  const [click, setClick] = useState(false);
-  const [button, setButton] = useState(true);
-
-  const handleClick = () => setClick(!click);
-  const closeMobileMenu = () => setClick(false);
-
-  const showButton = () => {
-    if (window.innerWidth <= 960) {
-      setButton(false);
-    } else {
-      setButton(true);
-    }
-  };
-
-  useEffect(() => {
-    showButton();
-  }, []);
-
-  window.addEventListener("resize", showButton);
-
   return (
     <>
-      <nav className="navbar">
-        <div className="navbar-container">
-          <Link
-            to="/admin-dashboard"
-            className="navbar-logo"
-            onClick={closeMobileMenu}
-          >
-            Admin
-          </Link>
-          <div className="menu-icon" onClick={handleClick}>
-            <i className={click ? "fas fa-times" : "fas fa-bars"} />
+      <div className="App">
+        <header class="header-section">
+          <div class="header-top">
+            <div class="container">
+              <div class="ht-left">
+                <div class="mail-service">
+                  <i class=" fa fa-envelope"></i>
+                  hotelmanage@gmail.com
+                </div>
+                <div class="phone-service">
+                  <i class=" fa fa-phone"></i>
+                  +76 111 1111
+                </div>
+              </div>
+              <div class="ht-right">
+                <a href="#" class="login-panel">
+                  <i class="fa fa-user"></i>Login
+                </a>
+                <div class="lan-selector">
+                  <select
+                    class="language_drop"
+                    name="countries"
+                    id="countries"
+                    style={{ width: "300px" }}
+                  >
+                    <option
+                      value="yt"
+                      data-image="assets/img/flag-1.jpg"
+                      data-imagecss="flag yt"
+                      data-title="English"
+                    >
+                      English
+                    </option>
+                  </select>
+                </div>
+                <div class="top-social">
+                  <a href="#">
+                    <i class="ti-facebook"></i>
+                  </a>
+                  <a href="#">
+                    <i class="ti-twitter-alt"></i>
+                  </a>
+                  <a href="#">
+                    <i class="ti-linkedin"></i>
+                  </a>
+                  <a href="#">
+                    <i class="ti-pinterest"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
           </div>
-          <ul className={click ? "nav-menu active" : "nav-menu"}>
-            <li className="nav-item">
-              <Link
-                to="/manage-menu"
-                className="nav-links"
-                onClick={closeMobileMenu}
-              >
-                Manage Menu
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link
-                to="/orders"
-                className="nav-links"
-                onClick={closeMobileMenu}
-              >
-                Orders
-              </Link>
-            </li>
-          </ul>
-        </div>
-      </nav>
+          <div class="container"></div>
+          <div class="nav-item">
+            <div class="container">
+              <div class="nav-depart">
+                <div class="depart-btn">
+                  <i class="ti-menu"></i>
+                  <span>All departments</span>
+                  <ul class="depart-hover">
+                    <li class="active">
+                      <a href="#">Room Division</a>
+                    </li>
+                    <li>
+                      <a href="#">Sales & Marketing</a>
+                    </li>
+                    <li>
+                      <a href="#">Food & Beverage</a>
+                    </li>
+                    <li>
+                      <a href="#">Human Resources</a>
+                    </li>
+                    <li>
+                      <a href="#">Kitchen</a>
+                    </li>
+                    <li>
+                      <a href="#">Gym</a>
+                    </li>
+                    <li>
+                      <a href="#">Housekeeping</a>
+                    </li>
+                    <li>
+                      <a href="#">Accounting</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <nav class="nav-menu mobile-menu">
+                <ul>
+                  <li class="active">
+                    <a href="/admin-dashboard">Admin</a>
+                  </li>
+                  <li>
+                    <a href="/manage-menu">Menu</a>
+                  </li>
+                  <li>
+                    <a href="/orders">Orders</a>
+                  </li>
+                  <li>
+                    <a href="#">Contact</a>
+                  </li>
+                  <li>
+                    <a href="#">Pages</a>
+                    <ul class="dropdown">
+                      <li>
+                        <a href="#">Cart</a>
+                      </li>
+                      <li>
+                        <a href="#">Checkout</a>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </nav>
+              <div id="mobile-menu-wrap"></div>
+            </div>
+          </div>
+        </header>
+      </div>
     </>
   );
 }

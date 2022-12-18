@@ -4,7 +4,7 @@ import Cards from "../Cards";
 import Footer from "../Footer";
 import { AspectRatio } from "@chakra-ui/react";
 import HeroSection from "../HeroSection";
-import Navbar from "../Navbar";
+import Navbar from "../../Navbar";
 
 function Home() {
   return (

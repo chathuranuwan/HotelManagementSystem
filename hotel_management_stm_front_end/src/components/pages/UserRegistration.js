@@ -21,10 +21,12 @@ import {
 } from "antd";
 import "antd/dist/antd.css";
 import { QuestionCircleOutlined } from "@ant-design/icons";
+import Navbar from "../../Navbar";
 
 class UserRegistration extends React.Component {
   render() {
     // Register Form
+
     const { Option } = Select;
     const AutoCompleteOption = AutoComplete.Option;
     const residences = [
@@ -405,6 +407,7 @@ class UserRegistration extends React.Component {
     return (
       <div className="MainDiv">
         <div class="jumbotron text-center">
+          <Navbar />
           <h3>User Registration</h3>
         </div>
 
