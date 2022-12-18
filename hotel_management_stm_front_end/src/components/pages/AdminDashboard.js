@@ -68,21 +68,21 @@ function AdminDashboard() {
             </div>
             <div class="collapse navbar-collapse" id="sidebarCollapse">
               <ul class="navbar-nav">
-                <li class="nav-item">
+                <li class="nav-item" style={{ background: "#FFFFFF" }}>
                   {" "}
                   <a class="nav-link" href="#">
                     {" "}
                     <i class="bi bi-house"></i> Dashboard{" "}
                   </a>{" "}
                 </li>
-                <li class="nav-item">
+                <li class="nav-item" style={{ background: "#FFFFFF" }}>
                   {" "}
                   <a class="nav-link" href="/orders">
                     {" "}
                     <i class="bi bi-bar-chart"></i> Orders{" "}
                   </a>{" "}
                 </li>
-                <li class="nav-item">
+                <li class="nav-item" style={{ background: "#FFFFFF" }}>
                   {" "}
                   <a class="nav-link" href="#">
                     {" "}
@@ -92,14 +92,14 @@ function AdminDashboard() {
                     </span>{" "}
                   </a>{" "}
                 </li>
-                <li class="nav-item">
+                <li class="nav-item" style={{ background: "#FFFFFF" }}>
                   {" "}
                   <a class="nav-link" href="/manage-menu">
                     {" "}
                     <i class="bi bi-bookmarks"></i> Menu Manage{" "}
                   </a>{" "}
                 </li>
-                <li class="nav-item">
+                <li class="nav-item" style={{ background: "#FFFFFF" }}>
                   {" "}
                   <a class="nav-link" href="/rooms">
                     {" "}
@@ -215,14 +215,14 @@ function AdminDashboard() {
               </ul>
               <div class="mt-auto"></div>
               <ul class="navbar-nav">
-                <li class="nav-item">
+                <li class="nav-item" style={{ background: "#FFFFFF" }}>
                   {" "}
                   <a class="nav-link" href="#">
                     {" "}
                     <i class="bi bi-person-square"></i> Account{" "}
                   </a>{" "}
                 </li>
-                <li class="nav-item">
+                <li class="nav-item" style={{ background: "#FFFFFF" }}>
                   {" "}
                   <a class="nav-link" href="/sign-in">
                     {" "}
