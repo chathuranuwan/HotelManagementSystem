@@ -18,6 +18,8 @@ import UserRegistration from "./components/pages/UserRegistration";
 import AddRoom from "./components/AdminComponents/addRoom/AddRoom";
 import LandingPage from "./LandingPage";
 import Navbar from "./Navbar";
+import EmployeesData from "./components/AdminComponents/EmployeesData";
+
 
 function App() {
   return (
@@ -44,6 +46,8 @@ function App() {
           <Route path="/sidebar" element={<AdminSidebar />} />
 
           <Route path="/rooms" element={<RoomsData />} />
+          <Route path="/employees" element={<EmployeesData />} />
+
         </Routes>
       </Router>
     </>
