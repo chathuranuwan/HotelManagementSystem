@@ -16,13 +16,17 @@ import RoomsData from "./components/AdminComponents/roomsDatatable/RoomsData";
 import About from "./components/pages/About";
 import UserRegistration from "./components/pages/UserRegistration";
 import AddRoom from "./components/AdminComponents/addRoom/AddRoom";
+import LandingPage from "./LandingPage";
+import Navbar from "./Navbar";
 
 function App() {
   return (
     <>
       <Router>
         <Routes>
-          <Route path="/" exact element={<Home />} />
+          <Route path="/nav" element={<Navbar />} />
+          <Route path="/" element={<LandingPage />} />
+          <Route path="/Home" exact element={<Home />} />
           <Route path="/services" element={<Services />} />
 
           <Route path="/menu" element={<Search />} />
@@ -40,8 +44,6 @@ function App() {
           <Route path="/sidebar" element={<AdminSidebar />} />
 
           <Route path="/rooms" element={<RoomsData />} />
-          
-       
         </Routes>
       </Router>
     </>
