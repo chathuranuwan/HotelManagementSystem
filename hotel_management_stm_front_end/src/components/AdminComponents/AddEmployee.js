@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react'
 import "./addEmployee.css"
 import axios from "axios";
 import EmployeesData from './EmployeesData';
+import AdminNavbar from '../AdminNavbar';
 //import AdminNavbar from '../../AdminNavbar';
 //import DriveFolderUploadOutlinedIcon from "@mui/icons-material/DriveFolderUploadOutlined";
 
@@ -13,7 +14,9 @@ const initialFieldValues = {
     employeeNumber:'',
     firstName:'',
     lastName:'',
-    // phoneNumber:'',
+    email:'',
+    phoneNumber:'',
+    // gender:'',
     imageName:'',
     imageSrc: defaultImage ,
     imageFile:null
@@ -69,7 +72,9 @@ export default function AddEmployee(props) {
     temp.employeeNumber = values.employeeNumber==""?false:true;
     temp.firstName = values.firstName==""?false:true;
     temp.lastName = values.lastName==""?false:true;
-    // temp.phoneNumber = values.phoneNumber==""?false:true;
+    temp.email = values.email==""?false:true;
+    temp.phoneNumber = values.phoneNumber==""?false:true;
+    // temp.gender = values.gender==""?false:true;
     temp.imageSrc = values.imageSrc==defaultImage?false:true;
     setErrors(temp)
     return Object.values(temp).every(x => x==true)
@@ -90,7 +95,9 @@ export default function AddEmployee(props) {
         formData.append('employeeNumber', values.employeeNumber)
         formData.append('firstName', values.firstName)
         formData.append('lastName', values.lastName)
-        // formData.append('phoneNumber', values.phoneNumber)
+        formData.append('email', values.email)
+        formData.append('phoneNumber', values.phoneNumber)
+        // formData.append('gender', values.gender)
         formData.append('imageFile', values.imageFile)
         addOrEdit(formData, resetForm)
     }
@@ -100,14 +107,15 @@ export default function AddEmployee(props) {
 
   return (
     <>
+        <AdminNavbar/>
         <div className="addEmployee">
             <div className="newContainer">
-            <div className="top" >
-                    <h1 style={{ color:'gray', fontSize:"20px" }}>Add New Employee</h1>
+            <div className="top3" >
+                    <h1 style={{ color:'#080500', fontSize:"25px" ,fontWeight:"bold"}}>Add New Employee</h1>
             </div>
                 <form  autoComplete='off' noValidate onSubmit={handleFormSubmit}>
-                    <div className="bottom">
-                        <div className="left">
+                    <div className="bottom3">
+                        <div className="left3">
                             <img 
                                 className='image' 
                                 src={values.imageSrc}
@@ -124,8 +132,8 @@ export default function AddEmployee(props) {
                                         id="image-uploader"
                                     />
                                 </div>
-                                <div className="formInput">
-                                    <label>Employee Number</label>
+                                {/* <div className="formInput">
+                                    <label>NIC NO</label>
                                     <input 
                                         className={"form-control"+ applyErrorClass('employeeNumber')}
                                         type="number" 
@@ -133,7 +141,7 @@ export default function AddEmployee(props) {
                                         value={values.employeeNumber}
                                         onChange={handleInputChange}   
                                     />
-                                </div> 
+                                </div>  */}
                                 <div className="formInput">
                                     <label>First Name</label>
                                     <input 
@@ -172,15 +180,41 @@ export default function AddEmployee(props) {
                                     
                                 </div> */}
 
-                                {/* <div className="formInput">
+                                <div className="formInput">
+                                    <label>Email</label>
+                                    <input 
+                                        className={"form-control"+ applyErrorClass('email')}
+                                        //type="number" 
+                                        name='email' 
+                                        value={values.email}
+                                        onChange={handleInputChange}
+                                    />
+                                </div>
+
+                                <div className="formInput">
                                     <label>Phone Number</label>
                                     <input 
                                         className={"form-control"+ applyErrorClass('phoneNumber')}
-                                        type="number" 
+                                        //type="number" 
                                         name='phoneNumber' 
                                         value={values.phoneNumber}
                                         onChange={handleInputChange}
                                     />
+                                </div>
+
+                                {/* <div className="formInput">
+                                    <label>Gender</label>
+                                    <select
+                                        className={"form-control"+ applyErrorClass('gender')}
+                                        name='gender' 
+                                        value={values.gender}
+                                        onChange={handleInputChange}
+                                        
+                                    > 
+                                        <option hidden >-Select-</option>
+                                        <option>Male</option>
+                                        <option>Female</option>
+                                    </select>
                                 </div> */}
 
                                 <div className='col-md-12'>
