@@ -16,13 +16,17 @@ namespace SystemManageApi.Models
 
         public int EmployeeNumber { get; set; }
 
-        [Column(TypeName = "nvarchar(20)")]
+        [Column(TypeName = "nvarchar(50)")]
         public string FirstName { get; set; }
 
-        [Column(TypeName = "nvarchar(100)")]
+        [Column(TypeName = "nvarchar(50)")]
         public string LastName { get; set; }
 
-        //public int PhoneNumber { get; set; }
+        [Column(TypeName = "nvarchar(100)")]
+        public string Email { get; set; }
+
+        [Column(TypeName = "nvarchar(20)")]
+        public string PhoneNumber { get; set; }
 
         [Column(TypeName = "nvarchar(100)")]
         public string ImageName { get; set; }
