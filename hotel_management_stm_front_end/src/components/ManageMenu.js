@@ -89,7 +89,7 @@ export default function ManageMenu() {
         <div className="col-md-12">
           <div class="jumbotron jumbotron-fluid py-4">
             <div class="container text-center">
-              <h1 class="display-4">Add New Food Item</h1>
+              <h3 >Add New Food Item</h3>
             </div>
           </div>
         </div>

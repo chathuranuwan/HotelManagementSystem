@@ -37,6 +37,7 @@ namespace SystemManageApi.Controllers
                     RoomID = x.RoomID,
                     RoomNumber = x.RoomNumber,
                     Floor = x.Floor,
+                    PricePerDay = x.PricePerDay,
                     Category = x.Category,
                     Status = x.Status,
                     ImageName = x.ImageName,

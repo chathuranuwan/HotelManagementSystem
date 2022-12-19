@@ -95,7 +95,7 @@ function Navbar() {
                   <a href="/">Home</a>
                 </li>
                 <li>
-                  <a href="#">ROOMS</a>
+                  <a href="/booking">ROOMS</a>
                 </li>
                 <li>
                   <a href="#">Tap to Order</a>

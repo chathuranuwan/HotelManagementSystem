@@ -1,0 +1,17 @@
+.employeesData{
+
+    height: 700px;
+    width: 100%;
+    padding: 20px;
+    
+}
+
+.top4 {
+    box-shadow: 2px 4px 10px 1px rgba(201, 201, 201, 0.47);
+    padding-top: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    min-height: 50px;
+    background-color: #3cdfff;
+    content: center;
+}

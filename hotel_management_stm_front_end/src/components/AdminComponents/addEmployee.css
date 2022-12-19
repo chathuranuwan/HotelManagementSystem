@@ -1,0 +1,97 @@
+.addEmployee{
+    width: 100%;
+    display: flex;
+}
+
+.newContainer{
+    flex: 6;
+}
+
+.top3 {
+    box-shadow: 2px 4px 10px 1px rgba(201, 201, 201, 0.47);
+    padding-top: 10px;
+    padding-left: 610px;
+    margin: 20px;
+    display: flex; 
+    content: center;
+    background-color: #3cdfff;
+}
+
+.bottom3 {
+    
+    box-shadow: 2px 4px 10px 1px rgba(201, 201, 201, 0.47);
+    padding-top: 20px;
+    margin: 20px;
+    display: flex; 
+}
+
+.left3{
+    flex: 1;
+    padding-top: 100px;
+    padding-left: 100px;
+    
+
+}
+
+.right{
+    flex: 2;
+   
+}
+
+
+
+
+.image{
+    width: 200px;
+    height: 200px;
+    
+}
+
+.formInput{
+    width: 40%;
+}
+
+.form-control-file{
+    border-bottom: none;
+}
+
+.form-control{
+    width: 100%;
+    padding: 5px;
+    border: none;
+    border-bottom: 1px solid gray;
+
+}
+
+label{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.icon{
+    cursor: pointer;
+}
+
+button{
+    width: 150px;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+.container1{
+
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    width: 100%;
+}
+
+.invalid-field{
+    border-color: red;
+    color: red;
+    background-color: #fff;
+}
+
+
+

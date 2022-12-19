@@ -74,12 +74,15 @@ export default function RoomsData() {
       </div>
       <div className="container">
       <div className="py-4">
-        <h3 class="mb-3 text-center">Room Details</h3>
-        <table  class="table border shadow text-center" color='blue'>
-          <thead class="thead-primary">
+        <div className="top2" >
+                    <h1 style={{ color:'#080500', fontSize:"25px" ,fontWeight:"bold"}}>Room Details</h1>
+        </div>
+        <table style={{fontsize:"40px"}} class="table border shadow text-center" color='blue'>
+          <thead class="thead-primary" >
             <tr>
               <th scope="col">Room No</th>
               <th scope="col">Floor</th>
+              <th scope="col">Price Per Day</th>
               <th scope="col">Category</th>
               <th scope="col">Status</th>
               <th scope="col"></th>
@@ -91,6 +94,7 @@ export default function RoomsData() {
               <tr>
                 <td>{room.roomNumber}</td>
                 <td>{room.floor}</td>
+                <td>{room.pricePerDay}</td>
                 <td>{room.category}</td>
                 <td>{room.status}</td>
                 <td>

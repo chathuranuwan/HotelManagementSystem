@@ -1,5 +1,6 @@
 import React from "react";
 import "./AdminDashboard.css";
+//import BookingTable from "../BookingTable";
 function AdminDashboard() {
   return (
     <div>
@@ -79,7 +80,7 @@ function AdminDashboard() {
                   {" "}
                   <a class="nav-link" href="/orders">
                     {" "}
-                    <i class="bi bi-bar-chart"></i> Orders{" "}
+                    <i class="bi bi-bar-chart" color="#FFFFFF"></i> Orders{" "}
                   </a>{" "}
                 </li>
                 <li class="nav-item" style={{ background: "#FFFFFF" }}>
@@ -239,7 +240,7 @@ function AdminDashboard() {
               <div class="mb-npx">
                 <div class="row align-items-center">
                   <div class="col-sm-6 col-12 mb-4 mb-sm-0">
-                    <h1 class="h2 mb-0 ls-tight">Dashboard</h1>
+                    {/* <h1 class="h2 mb-0 ls-tight">Dashboard</h1> */}
                   </div>
                 </div>
               </div>

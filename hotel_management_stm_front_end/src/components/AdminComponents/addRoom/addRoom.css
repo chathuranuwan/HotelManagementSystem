@@ -5,27 +5,32 @@
 
 .newContainer{
     flex: 6;
+    
 }
 
 .top {
     box-shadow: 2px 4px 10px 1px rgba(201, 201, 201, 0.47);
-    padding: 10px;
-    margin: 20px;
-    display: flex; 
+    padding-top: 10px;
+    padding-left: 0px;
+    margin-top: 20px;
+    Min-height: 50px;
+    background-color: #ffbc4d;
+    content: center;
 }
 
 .bottom {
     
     box-shadow: 2px 4px 10px 1px rgba(201, 201, 201, 0.47);
-    padding: 10px;
-    margin: 20px;
+    padding-left: 80px;
+    padding-top: 20px;
+    margin-top: 20px;
     display: flex; 
 }
 
 .left{
     flex: 1;
-    justify-content: space-around;
-    text-align: center;
+    padding-top: 80px;
+    padding-left: 20px;
     
 
 }
@@ -46,6 +51,7 @@
 
 .formInput{
     width: 40%;
+    font-size: medium;
 }
 
 .form-control-file{

@@ -3,7 +3,10 @@ import validateInfo from '../../../validateInfo'
 import "./addRoom.css"
 import axios from "axios";
 import RoomsData from '../roomsDatatable/RoomsData';
+//import AdminNavbar from '../../AdminNavbar';
+//import Navbar from '../../../Navbar';
 import AdminNavbar from '../../AdminNavbar';
+import { fontGrid } from '@mui/material/styles/cssUtils';
 //import DriveFolderUploadOutlinedIcon from "@mui/icons-material/DriveFolderUploadOutlined";
 
 const defaultImage = 'https:/icon-library.com/images/no-image-icon/no-image-icon-0.jpg'
@@ -12,6 +15,7 @@ const initialFieldValues = {
     roomID:0,
     roomNumber:'',
     floor:'',
+    pricePerDay:'',
     category:'',
     status:'',
     imageName:'',
@@ -68,6 +72,7 @@ export default function AddRoom(props) {
     let temp={}
     temp.roomNumber = values.roomNumber==""?false:true;
     temp.floor = values.floor==""?false:true;
+    temp.pricePerDay = values.pricePerDay==""?false:true;
     temp.category = values.category==""?false:true;
     temp.status = values.status==""?false:true;
     temp.imageSrc = values.imageSrc==defaultImage?false:true;
@@ -89,6 +94,7 @@ export default function AddRoom(props) {
         formData.append('roomID', values.roomID)
         formData.append('roomNumber', values.roomNumber)
         formData.append('floor', values.floor)
+        formData.append('pricePerDay', values.pricePerDay)
         formData.append('category', values.category)
          formData.append('status', values.status)
         formData.append('imageFile', values.imageFile)
@@ -100,10 +106,11 @@ export default function AddRoom(props) {
 
   return (
     <>
+    <AdminNavbar/>
         <div className="addRoom">
             <div className="newContainer">
             <div className="top" >
-                    <h1 style={{ color:'gray', fontSize:"20px" }}>Add New Room</h1>
+                    <h1 style={{ color:'#080500', fontSize:"25px" ,fontWeight:"bold"}}>Add New Room</h1>
             </div>
                 <form  autoComplete='off' noValidate onSubmit={handleFormSubmit}>
                     <div className="bottom">
@@ -136,14 +143,36 @@ export default function AddRoom(props) {
                                 </div> 
                                 <div className="formInput">
                                     <label>Floor</label>
-                                    <input 
+                                    <select
                                         className={"form-control"+ applyErrorClass('floor')}
-                                        type="number" 
                                         name='floor' 
                                         value={values.floor}
                                         onChange={handleInputChange}
-                                    />
+                                        
+                                    > 
+                                        <option hidden >-Select-</option>
+                                        <option>1</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                    </select>
                                 </div>
+
+                                <div className="formInput">
+                                    <label>Price Per Day Rs</label>
+                                    <select
+                                        className={"form-control"+ applyErrorClass('pricePerDay')}
+                                        name='pricePerDay' 
+                                        value={values.pricePerDay}
+                                        onChange={handleInputChange}
+                                        
+                                    > 
+                                        <option hidden >-Select-</option>
+                                        <option>2000</option>
+                                        <option>5000</option>
+                                        <option>8000</option>
+                                    </select>
+                                </div>
+
                                 <div className="formInput">
                                      <label>Category</label>
                                      <select
@@ -154,10 +183,9 @@ export default function AddRoom(props) {
                                         
                                     > 
                                         <option hidden >-Select-</option>
-                                        <option>Standered Suit</option>
+                                        <option>Single Bed</option>
+                                        <option>Double Bed</option>
                                         <option>Luxury Suit</option>
-                                        <option>Honeymoon Suit</option>
-                                        <option>Presidential Suit</option>
                                     </select>
                                     
                                 </div>

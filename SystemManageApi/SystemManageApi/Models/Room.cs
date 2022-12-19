@@ -18,6 +18,8 @@ namespace SystemManageApi.Models
 
         public int Floor { get; set; }
 
+        public int PricePerDay { get; set; }
+
         [Column(TypeName = "nvarchar(20)")]
         public string Category { get; set; }
 

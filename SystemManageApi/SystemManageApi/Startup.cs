@@ -50,6 +50,17 @@ namespace SystemManageApi
             services.AddDbContext<RoomDbContext>(options =>
             options.UseSqlServer(Configuration.GetConnectionString("DevConnection")));
 
+            services.AddDbContext<EmployeeDbContext>(options =>
+            options.UseSqlServer(Configuration.GetConnectionString("DevConnection")));
+
+            services.AddDbContext<BookingDbContext>(options =>
+            options.UseSqlServer(Configuration.GetConnectionString("DevConnection")));
+
+            services.AddDbContext<BookedCustomerDbContext>(options =>
+            options.UseSqlServer(Configuration.GetConnectionString("DevConnection")));
+
+            services.AddDbContext<WorkerDbContext>(options =>
+            options.UseSqlServer(Configuration.GetConnectionString("DevConnection")));
 
             services.AddDbContext<ApplicationDbContext>(option => option.UseSqlServer(Configuration.GetConnectionString("DevConnection")));
 

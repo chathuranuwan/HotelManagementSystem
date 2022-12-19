@@ -18,6 +18,10 @@ import UserRegistration from "./components/pages/UserRegistration";
 import AddRoom from "./components/AdminComponents/addRoom/AddRoom";
 import LandingPage from "./LandingPage";
 import Navbar from "./Navbar";
+import EmployeesData from "./components/AdminComponents/EmployeesData";
+import Booking from "./components/Booking";
+import BookedCustomerDetails from "./components/BookedCustomerDetails";
+import BookingTable from "./components/BookingTable";
 
 function App() {
   return (
@@ -44,6 +48,13 @@ function App() {
           <Route path="/sidebar" element={<AdminSidebar />} />
 
           <Route path="/rooms" element={<RoomsData />} />
+          <Route path="/employees" element={<EmployeesData />} />
+          <Route path="/booking" element={<Booking />} />
+          <Route path="/booked" element={<BookedCustomerDetails />} />
+          <Route path="/listedRooms" element={<BookingTable />} />
+
+
+
         </Routes>
       </Router>
     </>
