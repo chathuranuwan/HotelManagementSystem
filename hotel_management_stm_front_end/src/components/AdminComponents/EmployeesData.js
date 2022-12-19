@@ -74,14 +74,19 @@ export default function EmployeesData() {
       </div>
       <div className="container">
       <div className="py-4">
-        <h3 class="mb-3 text-center">Employee Details</h3>
+        <div className="top4" >
+                    <h1 style={{ color:'#080500', fontSize:"25px" ,fontWeight:"bold"}}>Employee Details</h1>
+        </div>
         <table  class="table border shadow text-center" color='blue'>
           <thead class="thead-primary">
             <tr>
-              <th scope="col">Employee Number</th>
+              <th scope="col">Employee ID</th>
+              {/* <th scope="col">NIC NO</th> */}
               <th scope="col">First Name</th>
               <th scope="col">Last Name</th>
-              {/* <th scope="col">Phone Number</th> */}
+              <th scope="col">Email</th>
+              <th scope="col">Phone Number</th>
+              {/* <th scope="col">Gender</th> */}
               <th scope="col"></th>
               <th scope="col"></th>
             </tr>
@@ -89,10 +94,13 @@ export default function EmployeesData() {
           <tbody>
             {employeeData.map((employee) => (
               <tr>
-                <td>{employee.employeeNumber}</td>
+                <td>{employee.employeeID}</td>
+                {/* <td>{employee.employeeNumber}</td> */}
                 <td>{employee.firstName}</td>
                 <td>{employee.lastName}</td>
-                {/* <td>{employee.phoneNumber}</td> */}
+                <td>{employee.email}</td>
+                <td>{employee.phoneNumber}</td>
+                {/* <td>{employee.gender}</td> */}
                 <td>
                   <Link class="" to='' onClick={()=>{viewEmployeeDetails(employee)}}>
                      <i class="fa fa-edit" aria-hidden="true"></i> 
