@@ -7,25 +7,28 @@
     flex: 6;
 }
 
-.top {
+.top3 {
     box-shadow: 2px 4px 10px 1px rgba(201, 201, 201, 0.47);
-    padding: 10px;
+    padding-top: 10px;
+    padding-left: 610px;
     margin: 20px;
     display: flex; 
+    content: center;
+    background-color: #3cdfff;
 }
 
-.bottom {
+.bottom3 {
     
     box-shadow: 2px 4px 10px 1px rgba(201, 201, 201, 0.47);
-    padding: 10px;
+    padding-top: 20px;
     margin: 20px;
     display: flex; 
 }
 
-.left{
+.left3{
     flex: 1;
-    justify-content: space-around;
-    text-align: center;
+    padding-top: 100px;
+    padding-left: 100px;
     
 
 }
