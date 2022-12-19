@@ -93,18 +93,27 @@ function AdminNavbar() {
               </div>
               <nav class="nav-menu mobile-menu">
                 <ul>
-                  <li class="active">
-                    <a href="/admin-dashboard">Admin</a>
+                <li>
+                    <a href="/admin-dashboard">Dashboard</a>
+                  </li>
+                  <li >
+                    <a href="/rooms">Rooms</a>
                   </li>
                   <li>
-                    <a href="/manage-menu">Menu</a>
+                    <a href="/listedRooms">Bookings</a>
+                  </li>
+                  <li>
+                    <a href="/manage-menu">Food</a>
                   </li>
                   <li>
                     <a href="/orders">Orders</a>
                   </li>
                   <li>
-                    <a href="#">Contact</a>
+                    <a href="/employees">Employees</a>
                   </li>
+                  {/* <li>
+                    <a href="#">Contact</a>
+                  </li> */}
                   <li>
                     <a href="#">Pages</a>
                     <ul class="dropdown">
