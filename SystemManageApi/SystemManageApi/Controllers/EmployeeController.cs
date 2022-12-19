@@ -38,7 +38,8 @@ namespace SystemManageApi.Controllers
                     EmployeeNumber = x.EmployeeNumber,
                     FirstName = x.FirstName,
                     LastName = x.LastName,
-                    //PhoneNumber = x.PhoneNumber,
+                    Email = x.Email,
+                    PhoneNumber = x.PhoneNumber,
                     ImageName = x.ImageName,
                     ImageSrc = String.Format("{0}://{1}{2}/Images/{3}", Request.Scheme, Request.Host, Request.PathBase, x.ImageName)
                 })
