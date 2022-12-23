@@ -5,6 +5,7 @@ import "../../Form.css";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import authService from "../../services/auth.service";
+import jwt from "jwt-decode";
 
 const SignIn = ({ submitForm }) => {
   const { handleChange, handleSubmit, values, errors } = useForm(
@@ -13,6 +14,7 @@ const SignIn = ({ submitForm }) => {
   );
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [UserRoles] = useState("");
 
   const navigate = useNavigate();
 
@@ -20,10 +22,17 @@ const SignIn = ({ submitForm }) => {
     e.preventDefault();
     try {
       await authService.login(username, password).then(
-        () => {
-          window.alert("you are successfully signed in");
-          navigate("/admin-dashboard");
-          window.location.reload();
+        (response) => {
+          console.log(response);
+          const tokenData = jwt(response.token);
+          console.log(tokenData);
+          localStorage.setItem("token", JSON.stringify(response.token));
+          if (tokenData.UserRoles == "Admin") {
+            console.log("Hello");
+            navigate("/admin-dashboard");
+          } else {
+            navigate("/");
+          }
         },
         (error) => {
           window.alert("you are failed to sign in");

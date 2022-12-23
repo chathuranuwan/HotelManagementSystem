@@ -1,4 +1,5 @@
 import axios from "axios";
+import jwt from "jwt-decode";
 
 const API_URL = "https://localhost:44389/api/Authenticate";
 
@@ -11,6 +12,8 @@ const signup = (username, email, password) => {
     })
     .then((response) => {
       if (response.data.accessToken) {
+        const tokenData = jwt(response.data.accessToken);
+
         localStorage.setItem("user", JSON.stringify(response.data));
       }
 
@@ -26,6 +29,8 @@ const login = (username, password) => {
     })
     .then((response) => {
       if (response.data.accessToken) {
+        console.log(response.data.accessToken);
+
         localStorage.setItem("user", JSON.stringify(response.data));
       }
 

@@ -1,6 +1,19 @@
-import React from "react";
+import jwt from "jwt-decode";
+import authService from "./services/auth.service";
+import React, { useState } from "react";
 
-function Navbar() {
+const Navbar = () => {
+  const setData = () => {
+    const token = localStorage.getItem("token");
+    if (token) {
+      const tokenData = jwt(token);
+      return tokenData.Username;
+    } else {
+      return "Login";
+    }
+  };
+
+  setData();
   return (
     <div className="App">
       <header class="header-section">
@@ -18,7 +31,8 @@ function Navbar() {
             </div>
             <div class="ht-right">
               <a href="/sign-in" class="login-panel">
-                <i class="fa fa-user"></i>Login
+                <i class="fa fa-user"></i>
+                {setData()}
               </a>
               <div class="lan-selector">
                 <select
@@ -127,7 +141,7 @@ function Navbar() {
                       <a href="/services">Services</a>
                     </li>
                     <li>
-                      <a href="#">Cart</a>
+                      <a href="/myorders">Cart</a>
                     </li>
                     <li>
                       <a href="#">Checkout</a>
@@ -136,7 +150,11 @@ function Navbar() {
                       <a href="/sign-up">Register</a>
                     </li>
                     <li>
+                      ``
                       <a href="/sign-in">Login</a>
+                    </li>
+                    <li>
+                      <a href="/sign-in">Logout</a>
                     </li>
                   </ul>
                 </li>
@@ -148,6 +166,6 @@ function Navbar() {
       </header>
     </div>
   );
-}
+};
 
 export default Navbar;
