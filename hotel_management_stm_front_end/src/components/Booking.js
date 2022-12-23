@@ -28,9 +28,8 @@ function Booking() {
 
   useEffect(() => {
     setFilteredRooms(
-      rooms.filter(
-        (room) =>
-          room.category.toLowerCase().includes(search.toLowerCase())
+      rooms.filter((room) =>
+        room.category.toLowerCase().includes(search.toLowerCase())
       )
     );
   }, [search, rooms]);
@@ -61,14 +60,7 @@ function Booking() {
 }
 
 const SystemManageApi = (props) => {
-  const {
-    roomNumber,
-    roomID,
-    imageSrc,
-    category,
-    status,
-    pricePerDay,
-  } = props;
+  const { roomNumber, roomID, imageSrc, category, status, pricePerDay } = props;
 
   const [count, setCount] = useState(1);
   const navigate = useNavigate();
@@ -113,11 +105,11 @@ const SystemManageApi = (props) => {
 
                     <div className="input-group">
                       <div>
-                        <label className="days">Days</label>
+                        <label className="days-2">Days</label>
                       </div>
                       <button
                         type="button"
-                        className="input-group-text"
+                        className="input-group-text-1"
                         onClick={() => setCount(count - 1)}
                       >
                         -
@@ -127,7 +119,7 @@ const SystemManageApi = (props) => {
                       </div>
                       <button
                         type="button"
-                        className="input-group-text"
+                        className="input-group-text-1"
                         onClick={() => setCount(count + 1)}
                       >
                         +

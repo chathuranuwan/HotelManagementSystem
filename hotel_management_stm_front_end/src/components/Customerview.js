@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import "../App.css";
 import AdminNavbar from "./AdminNavbar";
 import axios from "axios";
+import { Button } from "bootstrap";
 
 export default function Customerview(props) {
   const { addOrEdit, recordForEdit } = props;
@@ -40,6 +41,7 @@ export default function Customerview(props) {
                   <th>Email Address</th>
                   <th>Mobile Number</th>
                   <th>Room Number</th>
+                  <th>Action</th>
                 </tr>
               </thead>
               <tbody>
