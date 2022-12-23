@@ -82,6 +82,22 @@ const SystemManageApi = (props) => {
     }
   };
 
+  const setData4 = () => {
+    const token = localStorage.getItem("token");
+    if (token) {
+      const tokenData = jwt(token);
+      return tokenData.Username;
+    }
+  };
+
+  const setData5 = () => {
+    const token = localStorage.getItem("token");
+    if (token) {
+      const tokenData = jwt(token);
+      return tokenData.Email;
+    }
+  };
+
   setData3();
 
   const [count, setCount] = useState(1);
@@ -89,6 +105,8 @@ const SystemManageApi = (props) => {
 
   const handleRoute = () => {
     let obj = {
+      email: setData5(),
+      userName: setData4(),
       userId: setData3(),
       image: imageSrc,
       PerItem: pricePerItem,
