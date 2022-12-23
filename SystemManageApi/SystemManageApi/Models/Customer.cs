@@ -10,8 +10,11 @@ namespace SystemManageApi.Models
 {
     public class Customer
     {
-        [Key]
+        
         public int CustomerID { get; set; }
+
+        [Column(TypeName = "nvarchar(50)")]
+        public string UserNumber { get; set; }
 
         [Column(TypeName = "nvarchar(50)")]
         public string FirstName { get; set; }
@@ -41,6 +44,8 @@ namespace SystemManageApi.Models
    
         [Column(TypeName = "nvarchar(100)")]
         public string FoodimageName { get; set; }
+
+        public bool status { get; set; }
 
        
 

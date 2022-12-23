@@ -32,6 +32,7 @@ namespace SystemManageApi.Controllers
             .Select(x => new Customer()
              {
                  CustomerID = x.CustomerID,
+                UserNumber = x.UserNumber,
                  FirstName = x.FirstName,
                  LastName = x.LastName,
                  EmailAddress = x.EmailAddress,
@@ -39,6 +40,7 @@ namespace SystemManageApi.Controllers
                 RoomNumber = x.RoomNumber,
                 NumberOfItems =x.NumberOfItems,
                  TotalPrice  =x.TotalPrice,
+                 status=false,
                 FoodimageSrc = String.Format("{3}", Request.Scheme, Request.Host, Request.PathBase, x.FoodimageName)
 
             })
@@ -48,13 +50,13 @@ namespace SystemManageApi.Controllers
 
         // GET: api/Customer/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Customer>> GetCustomer(int id)
+        public async Task<IQueryable<Customer>> GetCustomer(String id)
         {
-            var customer = await _context.Customers.FindAsync(id);
+            var customer = _context.Customers.Where(asd=>asd.UserNumber == id);
 
             if (customer == null)
             {
-                return NotFound();
+                return (IQueryable<Customer>)NotFound();
             }
 
             return customer;
@@ -62,34 +64,7 @@ namespace SystemManageApi.Controllers
 
         // PUT: api/Customer/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [HttpPut("{id}")]
-        public async Task<IActionResult> PutCustomer(int id, Customer customer)
-        {
-            if (id != customer.CustomerID)
-            {
-                return BadRequest();
-            }
-
-            _context.Entry(customer).State = EntityState.Modified;
-
-            try
-            {
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!CustomerExists(id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-            }
-
-            return NoContent();
-        }
+    
 
         // POST: api/Customer
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
@@ -102,6 +77,11 @@ namespace SystemManageApi.Controllers
 
             return StatusCode(201);
         }
+
+
+        
+
+
 
         // DELETE: api/Customer/5
         [HttpDelete("{id}")]
@@ -124,9 +104,6 @@ namespace SystemManageApi.Controllers
 
 
 
-        private bool CustomerExists(int id)
-        {
-            return _context.Customers.Any(e => e.CustomerID == id);
-        }
+      
     }
 }

@@ -119,20 +119,14 @@ namespace SystemManageApi
 
             app.UseStaticFiles(new StaticFileOptions
             {
-                FileProvider = new PhysicalFileProvider(Path.Combine(env.ContentRootPath, "Images")),
+                FileProvider = new PhysicalFileProvider(System.IO.Path.Combine(env.ContentRootPath, "Images")),
                 RequestPath = "/Images"
-
-               
-            });
-
-            app.UseStaticFiles(new StaticFileOptions
-            {
-                FileProvider = new PhysicalFileProvider(Path.Combine(env.ContentRootPath, "Images")),
-                RequestPath = "/Images"
+              
 
 
             });
 
+           
 
             app.UseHttpsRedirection();
 
