@@ -9,6 +9,7 @@ import Navbar from "../Navbar";
 
 function Booking() {
   const [rooms, setRooms] = useState([]);
+  const [price, setPrice] = useState(0);
   const [loading, setLoading] = useState(false);
   const [search, setSearch] = useState("");
   const [filteredRooms, setFilteredRooms] = useState([]);
@@ -30,7 +31,8 @@ function Booking() {
     setFilteredRooms(
       rooms.filter(
         (room) =>
-          room.category.toLowerCase().includes(search.toLowerCase())
+          room.category.toLowerCase().includes(search.toLowerCase()) 
+          // || room.pricePerDay < parseInt(search, 10)
       )
     );
   }, [search, rooms]);
@@ -42,8 +44,8 @@ function Booking() {
   return (
     <>
       <Navbar />
-      <h1>Room List</h1>
-      <div className="col-sm-6 offset-sm-5">
+      <h1>Search Rooms</h1>
+      {/* <div className="col-sm-6 offset-sm-5">
         <label className="form-lable h4">Search</label>
         <input
           className="form-control"
@@ -51,6 +53,17 @@ function Booking() {
           placeholder="Search rooms"
           onChange={(e) => setSearch(e.target.value)}
         />
+      </div> */}
+      <div className="col-sm-6 offset-sm-5">
+        <label>Select Room Type</label>
+        <select
+          className="form-control"
+          onChange={(e) => setSearch(e.target.value)}
+        >
+          <option hidden>Room Type</option>
+          <option>Single</option>
+          <option>Luxury</option>
+        </select>
       </div>
 
       {filteredRooms.map((room, idx) => (
@@ -61,14 +74,7 @@ function Booking() {
 }
 
 const SystemManageApi = (props) => {
-  const {
-    roomNumber,
-    roomID,
-    imageSrc,
-    category,
-    status,
-    pricePerDay,
-  } = props;
+  const { roomNumber, roomID, imageSrc, category, status, pricePerDay } = props;
 
   const [count, setCount] = useState(1);
   const navigate = useNavigate();

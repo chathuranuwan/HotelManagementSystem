@@ -3,6 +3,7 @@ import "../App.css";
 import axios from "axios";
 // import DatePicker from "react-datepicker";
 // import "react-datepicker/dist/react-datepicker.css";
+import { Box, Button, DateInput, Form, FormField } from 'grommet';
 
 export default function BookedCustomer(props) {
   const { addOrEdit, recordForEdit } = props;
@@ -24,6 +25,8 @@ export default function BookedCustomer(props) {
       });
   }, []);
 
+  
+
   const initialFieldValues = {
     customerID: 0,
     roomimageSrc: "",
@@ -34,7 +37,9 @@ export default function BookedCustomer(props) {
     lastName: "",
     emailAddress: "",
     mobileNumber: "",
-    startingDate: "",
+    startingDate : "",
+    roomStatus:"Pending",
+    //startingDate:null,
     roomimageFile: "",
   };
 
@@ -106,6 +111,7 @@ export default function BookedCustomer(props) {
       formData.append("startingDate", values.startingDate);
       formData.append("emailAddress", values.emailAddress);
       formData.append("mobileNumber", values.mobileNumber);
+      formData.append("roomStatus", values.roomStatus);
       addOrEdit(formData, resetForm);
     }
   };
@@ -124,72 +130,8 @@ export default function BookedCustomer(props) {
   return (
     <>
       <form outoComplete="off" noValidate onSubmit={handleFormSubmit}>
-        <div className="row">
-          <div className="col-md-7">
-            <div className="card3">
-              <div className="container text-center">
-                <p className="lead">Enter your details</p>
-              </div>
-              <div className="card-body3">
-                <div className="form-group">
-                  <input
-                    className={"form-control" + applyErrorClass("firstName")}
-                    placeholder="first Name"
-                    name="firstName"
-                    value={values.firstName}
-                    onChange={handleInputChange}
-                    id="image-uploader"
-                  />
-                </div>
-                <div className="form-group">
-                  <input
-                    className={"form-control" + applyErrorClass("lastName")}
-                    placeholder="Last Name"
-                    name="lastName"
-                    value={values.lastName}
-                    onChange={handleInputChange}
-                  />
-                </div>
-                <div className="form-group">
-                  <input
-                    className={"form-control" + applyErrorClass("emailAddress")}
-                    placeholder="Email Address"
-                    name="emailAddress"
-                    value={values.emailAddress}
-                    onChange={handleInputChange}
-                  />
-                </div>
 
-                <div className="form-group">
-                  <input
-                    className={"form-control" + applyErrorClass("mobileNumber")}
-                    placeholder="Mobile Number"
-                    name="mobileNumber"
-                    value={values.mobileNumber}
-                    onChange={handleInputChange}
-                  />
-                </div>
-
-                <div className="form-group">
-                  <input
-                    className={"form-control" + applyErrorClass("startingDate")}
-                    placeholder="Starting Date"
-                    name="startingDate"
-                    value={values.startDate}
-                    onChange={handleInputChange}
-                  />
-                </div>
-
-                <div className="form-group text-center">
-                  <button type="submit" className="btn btn-light">
-                    Submit
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="col-md-4">
+      <div className="col-md-12" align="center">
             <div className="table-body">
               <table className="table table-bordered">
                 <thead>
@@ -219,7 +161,105 @@ export default function BookedCustomer(props) {
               </table>
             </div>
           </div>
-        </div>
+        
+          <div className="col-md-12">
+            <div className="card11" align='center'>
+              <div className="container text-center">
+                <p className="lead">Enter your details</p>
+              </div>
+              <div className="card-body3">
+                <div className="form-group" align ="center">
+                  <input
+                    className={"form-control" + applyErrorClass("firstName")}
+                    placeholder="first Name"
+                    name="firstName"
+                    value={values.firstName}
+                    onChange={handleInputChange}
+                    id="image-uploader"
+                  />
+                </div>
+                <div className="form-group" align ="center">
+                  <input
+                    className={"form-control" + applyErrorClass("lastName")}
+                    placeholder="Last Name"
+                    name="lastName"
+                    value={values.lastName}
+                    onChange={handleInputChange}
+                  />
+                </div>
+                <div className="form-group" align ="center">
+                  <input
+                    className={"form-control" + applyErrorClass("emailAddress")}
+                    placeholder="Email Address"
+                    name="emailAddress"
+                    type="email"
+                    value={values.emailAddress}
+                    onChange={handleInputChange}
+                  />
+                </div>
+
+                <div className="form-group" align ="center">
+                  <input
+                    className={"form-control"}
+                    name="roomStatus"
+                    type="string"
+                    value={values.roomStatus="Pending"}
+                    hidden
+                  />
+                </div>
+
+                <div className="form-group" align ="center">
+                  <input
+                    className={"form-control" + applyErrorClass("mobileNumber")}
+                    placeholder="Mobile Number"
+                    name="mobileNumber"
+                    value={values.mobileNumber}
+                    onChange={handleInputChange}
+                  />
+                </div>
+
+                <div className="form-group" align ="center">
+                  <input
+                    className={"form-control" + applyErrorClass("startingDate")}
+                    placeholder="Starting Date"
+                    name="startingDate"
+                    type="date"
+                    value={values.startingDate}
+                    onChange={handleInputChange}
+                  />
+                </div>
+
+                
+                
+                  {/* <Box align="center" pad="large">
+                    <Form
+                        timeFormat={true}
+                        className={"form-control" + applyErrorClass("startingDate")}
+                        value={values.startingDate}
+                        name="startingDate"
+                        onChange={handleInputChange}
+                        // onSubmit={({ value: nextValue }) => {
+                        // console.log(nextValue);
+                        // setValue({ value: '' });
+                        // }}
+                    >
+                      <FormField>
+                        <DateInput format="mm/dd/yyyy" />
+                      </FormField>
+                    </Form>
+                  </Box> */}
+
+                
+
+                <div className="form-group text-center">
+                  <button type="submit" className="btn btn-light">
+                    Submit
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        
       </form>
     </>
   );
