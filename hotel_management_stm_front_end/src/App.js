@@ -22,6 +22,7 @@ import EmployeesData from "./components/AdminComponents/EmployeesData";
 import Booking from "./components/Booking";
 import BookedCustomerDetails from "./components/BookedCustomerDetails";
 import BookingTable from "./components/BookingTable";
+import OrderedList from "./components/OrderedList";
 import Test from "./components/Test";
 
 function App() {
@@ -30,6 +31,7 @@ function App() {
       <Router>
         <Routes>
           <Route exact path="/nav" element={<Navbar />} />
+          <Route path="/myorders" element={<OrderedList />} />
           <Route path="/" element={<LandingPage />} />
           <Route path="/Home" exact element={<Home />} />
           <Route path="/services" element={<Services />} />

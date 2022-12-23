@@ -15,7 +15,7 @@ function LandingPage() {
               <div class="row">
                 <div class="col-lg-5">
                   <span>Hotel</span>
-                  <h1>Special offer</h1>
+                  <h1 style={{ color: "#FFFFFF" }}>Special offer</h1>
                   <p></p>
                   <a href="#" class="primary-btn">
                     Book Now
@@ -37,7 +37,7 @@ function LandingPage() {
               <div class="row">
                 <div class="col-lg-5">
                   <span>Hotel</span>
-                  <h1>Special offer</h1>
+                  <h1 style={{ color: "#FFFFFF" }}>Special offer</h1>
                   <p></p>
                   <a href="#" class="primary-btn">
                     Book Now

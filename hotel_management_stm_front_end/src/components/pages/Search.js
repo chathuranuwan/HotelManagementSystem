@@ -7,6 +7,7 @@ import { useNavigate } from "react-router-dom";
 import Customer from "../Customer";
 import { Link } from "react-router-dom";
 import Navbar from "../../Navbar";
+import jwt from "jwt-decode";
 
 function App() {
   const [foods, setFoods] = useState([]);
@@ -73,11 +74,40 @@ const SystemManageApi = (props) => {
     pricePerItem,
   } = props;
 
+  const setData3 = () => {
+    const token = localStorage.getItem("token");
+    if (token) {
+      const tokenData = jwt(token);
+      return tokenData.Id;
+    }
+  };
+
+  const setData4 = () => {
+    const token = localStorage.getItem("token");
+    if (token) {
+      const tokenData = jwt(token);
+      return tokenData.Username;
+    }
+  };
+
+  const setData5 = () => {
+    const token = localStorage.getItem("token");
+    if (token) {
+      const tokenData = jwt(token);
+      return tokenData.Email;
+    }
+  };
+
+  setData3();
+
   const [count, setCount] = useState(1);
   const navigate = useNavigate();
 
   const handleRoute = () => {
     let obj = {
+      email: setData5(),
+      userName: setData4(),
+      userId: setData3(),
       image: imageSrc,
       PerItem: pricePerItem,
       items: count,
@@ -121,7 +151,7 @@ const SystemManageApi = (props) => {
                       </div>
                       <button
                         type="button"
-                        className="input-group-text"
+                        className="input-group-text-1"
                         onClick={() => setCount(count - 1)}
                       >
                         -
@@ -131,7 +161,7 @@ const SystemManageApi = (props) => {
                       </div>
                       <button
                         type="button"
-                        className="input-group-text"
+                        className="input-group-text-1"
                         onClick={() => setCount(count + 1)}
                       >
                         +

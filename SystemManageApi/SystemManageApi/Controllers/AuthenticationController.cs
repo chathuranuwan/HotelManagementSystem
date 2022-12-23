@@ -39,7 +39,8 @@ namespace SystemManageApi.Controllers
              {
                  Email = model.Email,
                  SecurityStamp = Guid.NewGuid().ToString(),
-                 UserName = model.Username 
+                 UserName = model.Username,
+                 UserRoles="User"
              };
             var result = await userManager.CreateAsync(user, model.Password);
             if(!result.Succeeded)
@@ -62,6 +63,15 @@ namespace SystemManageApi.Controllers
                 {
                     new Claim(ClaimTypes.Name, user.UserName),
                     new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
+                      new Claim("UserRoles", user.UserRoles),
+                    new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
+                     new Claim("Username", user.UserName),
+                    new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
+                     new Claim("Id", user.Id),
+                    new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
+                    new Claim("Email", user.Email),
+                    new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
+
                 };
 
                 foreach (var userRole in userRoles)
@@ -104,7 +114,7 @@ namespace SystemManageApi.Controllers
             var result = await userManager.CreateAsync(user, model.Password);
             if (!result.Succeeded)
                 return StatusCode(StatusCodes.Status500InternalServerError, new Response { Status = "Error", Message = "User creation failed! Please check user details and try again." });
-
+             
             if (!await roleManager.RoleExistsAsync(UserRoles.Admin))
                 await roleManager.CreateAsync(new IdentityRole(UserRoles.Admin));
             if (!await roleManager.RoleExistsAsync(UserRoles.User))

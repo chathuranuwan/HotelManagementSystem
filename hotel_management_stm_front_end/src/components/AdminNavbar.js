@@ -1,7 +1,21 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
-function AdminNavbar() {
+import jwt from "jwt-decode";
+
+const AdminNavbar = () => {
+  const setData2 = () => {
+    const token = localStorage.getItem("token");
+    if (token) {
+      const tokenData = jwt(token);
+      return tokenData.Username;
+    } else {
+      return "Login";
+    }
+  };
+
+  setData2();
+
   return (
     <>
       <div className="App">
@@ -20,7 +34,7 @@ function AdminNavbar() {
               </div>
               <div class="ht-right">
                 <a href="#" class="login-panel">
-                  <i class="fa fa-user"></i>Login
+                  <i class="fa fa-user"></i> {setData2()}
                 </a>
                 <div class="lan-selector">
                   <select
@@ -93,10 +107,10 @@ function AdminNavbar() {
               </div>
               <nav class="nav-menu mobile-menu">
                 <ul>
-                <li>
+                  <li>
                     <a href="/admin-dashboard">Dashboard</a>
                   </li>
-                  <li >
+                  <li>
                     <a href="/rooms">Rooms</a>
                   </li>
                   <li>
@@ -134,6 +148,6 @@ function AdminNavbar() {
       </div>
     </>
   );
-}
+};
 
 export default AdminNavbar;

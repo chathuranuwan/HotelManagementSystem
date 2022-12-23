@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import "../App.css";
 import axios from "axios";
+import { Navigate } from "react-router";
+import { useNavigate } from "react-router-dom";
 
 export default function Customer(props) {
   const { addOrEdit, recordForEdit } = props;
@@ -23,6 +25,7 @@ export default function Customer(props) {
 
   const initialFieldValues = {
     customerID: 0,
+    userNumber: "",
     foodimageSrc: "",
     foodimageName: "",
     numberOfItems: "",
@@ -33,6 +36,7 @@ export default function Customer(props) {
     mobileNumber: "",
     roomNumber: "",
     foodimageFile: "",
+    status: "",
   };
 
   const [values, setValues] = useState(initialFieldValues);
@@ -68,14 +72,16 @@ export default function Customer(props) {
   const validate = () => {
     let temp = {};
 
+    temp.userNumber = values.userNumber == "";
     temp.foodimageSrc = values.foodimageSrc == "";
-    temp.firstName = values.firstName == "" ? false : true;
-    temp.lastName = values.lastName == "" ? false : true;
-    temp.emailAddress = values.emailAddress == "" ? false : true;
+    temp.firstName = values.firstName == "";
+    temp.lastName = values.lastName == "";
+    temp.emailAddress = values.emailAddress == "";
     temp.mobileNumber = values.mobileNumber == "" ? false : true;
     temp.roomNumber = values.roomNumber == "" ? false : true;
     temp.numberOfItems = values.numberOfItems == "";
     temp.totalPrice = values.totalPrice == "";
+    temp.status = values.status == "";
 
     setErrors(temp);
     return Object.values(temp).every((x) => x == true);
@@ -87,23 +93,27 @@ export default function Customer(props) {
     setErrors({});
   };
 
+  const navigate = useNavigate();
+
   const handleFormSubmit = (e) => {
     e.preventDefault();
     if (validate()) {
       const formData = new FormData();
 
       formData.append("foodimageName", data.image);
-
+      formData.append("userNumber", data.userId);
+      formData.append("customerID", values.customerID);
       formData.append("numberOfItems", data.items);
       formData.append("totalPrice", data.total);
-      formData.append("customerID", values.customerID);
-      formData.append("firstName", values.firstName);
-      formData.append("lastName", values.lastName);
+      formData.append("firstName", data.userName);
+      formData.append("lastName", data.userName);
       formData.append("roomNumber", values.roomNumber);
-      formData.append("emailAddress", values.emailAddress);
+      formData.append("emailAddress", data.email);
       formData.append("mobileNumber", values.mobileNumber);
+
       addOrEdit(formData, resetForm);
     }
+    window.alert("successfully placed the order");
   };
 
   const applyErrorClass = (field) =>
@@ -127,35 +137,6 @@ export default function Customer(props) {
                 <p className="lead">Enter your details</p>
               </div>
               <div className="card-body3">
-                <div className="form-group">
-                  <input
-                    className={"form-control" + applyErrorClass("firstName")}
-                    placeholder="first Name"
-                    name="firstName"
-                    value={values.firstName}
-                    onChange={handleInputChange}
-                    id="image-uploader"
-                  />
-                </div>
-                <div className="form-group">
-                  <input
-                    className={"form-control" + applyErrorClass("lastName")}
-                    placeholder="Last Name"
-                    name="lastName"
-                    value={values.lastName}
-                    onChange={handleInputChange}
-                  />
-                </div>
-                <div className="form-group">
-                  <input
-                    className={"form-control" + applyErrorClass("emailAddress")}
-                    placeholder="Email Address"
-                    name="emailAddress"
-                    value={values.emailAddress}
-                    onChange={handleInputChange}
-                  />
-                </div>
-
                 <div className="form-group">
                   <input
                     className={"form-control" + applyErrorClass("mobileNumber")}
