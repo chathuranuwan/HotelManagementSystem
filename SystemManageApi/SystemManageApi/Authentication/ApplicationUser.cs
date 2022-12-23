@@ -8,5 +8,6 @@ namespace SystemManageApi.Authentication
 {
     public class ApplicationUser:IdentityUser
     {
+        public string UserRoles { get; set; }
     }
 }

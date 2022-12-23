@@ -17,5 +17,7 @@ namespace SystemManageApi.Authentication
         [Required(ErrorMessage = "Password is required")]
 
         public string Password { get; set; }
+
+        public string UserRoles { get; set; }
     }
 }
