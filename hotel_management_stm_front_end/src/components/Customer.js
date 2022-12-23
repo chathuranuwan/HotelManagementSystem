@@ -74,9 +74,9 @@ export default function Customer(props) {
 
     temp.userNumber = values.userNumber == "";
     temp.foodimageSrc = values.foodimageSrc == "";
-    temp.firstName = values.firstName == "" ? false : true;
-    temp.lastName = values.lastName == "" ? false : true;
-    temp.emailAddress = values.emailAddress == "" ? false : true;
+    temp.firstName = values.firstName == "";
+    temp.lastName = values.lastName == "";
+    temp.emailAddress = values.emailAddress == "";
     temp.mobileNumber = values.mobileNumber == "" ? false : true;
     temp.roomNumber = values.roomNumber == "" ? false : true;
     temp.numberOfItems = values.numberOfItems == "";
@@ -105,10 +105,10 @@ export default function Customer(props) {
       formData.append("customerID", values.customerID);
       formData.append("numberOfItems", data.items);
       formData.append("totalPrice", data.total);
-      formData.append("firstName", values.firstName);
-      formData.append("lastName", values.lastName);
+      formData.append("firstName", data.userName);
+      formData.append("lastName", data.userName);
       formData.append("roomNumber", values.roomNumber);
-      formData.append("emailAddress", values.emailAddress);
+      formData.append("emailAddress", data.email);
       formData.append("mobileNumber", values.mobileNumber);
 
       addOrEdit(formData, resetForm);
@@ -137,35 +137,6 @@ export default function Customer(props) {
                 <p className="lead">Enter your details</p>
               </div>
               <div className="card-body3">
-                <div className="form-group">
-                  <input
-                    className={"form-control" + applyErrorClass("firstName")}
-                    placeholder="first Name"
-                    name="firstName"
-                    value={values.firstName}
-                    onChange={handleInputChange}
-                    id="image-uploader"
-                  />
-                </div>
-                <div className="form-group">
-                  <input
-                    className={"form-control" + applyErrorClass("lastName")}
-                    placeholder="Last Name"
-                    name="lastName"
-                    value={values.lastName}
-                    onChange={handleInputChange}
-                  />
-                </div>
-                <div className="form-group">
-                  <input
-                    className={"form-control" + applyErrorClass("emailAddress")}
-                    placeholder="Email Address"
-                    name="emailAddress"
-                    value={values.emailAddress}
-                    onChange={handleInputChange}
-                  />
-                </div>
-
                 <div className="form-group">
                   <input
                     className={"form-control" + applyErrorClass("mobileNumber")}
