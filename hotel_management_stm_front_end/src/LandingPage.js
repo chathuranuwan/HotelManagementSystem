@@ -76,7 +76,7 @@ function LandingPage() {
               <div class="single-banner">
                 <img src="assets/img/banner-3.jpg" alt="" />
                 <div class="inner-text">
-                  <h4>Family</h4>
+                  <h4>Luxury</h4>
                 </div>
               </div>
             </div>
@@ -120,10 +120,10 @@ function LandingPage() {
                         </a>
                       </li>
                       <li class="quick-view">
-                        <a href="#">+ Quick View</a>
+                        <a href="/menu">+ Quick View</a>
                       </li>
                       <li class="w-icon">
-                        <a href="#">
+                        <a href="/menu">
                           <i class="fa fa-random"></i>
                         </a>
                       </li>
@@ -150,7 +150,7 @@ function LandingPage() {
                         </a>
                       </li>
                       <li class="quick-view">
-                        <a href="#">+ Quick View</a>
+                        <a href="/menu">+ Quick View</a>
                       </li>
                       <li class="w-icon">
                         <a href="/menu">
@@ -161,7 +161,7 @@ function LandingPage() {
                   </div>
                   <div class="pi-text">
                     <div class="catagory-name">Foods</div>
-                    <a href="#">
+                    <a href="/menu">
                       <h5>BBQ Prawns</h5>
                     </a>
                     <div class="product-price">$10.00</div>
@@ -267,7 +267,7 @@ function LandingPage() {
                 <p>Secs</p>
               </div>
             </div>
-            <a href="#" class="primary-btn">
+            <a href="/booking" class="primary-btn">
               Book Now
             </a>
           </div>
@@ -295,15 +295,15 @@ function LandingPage() {
                     </div>
                     <ul>
                       <li class="w-icon active">
-                        <a href="#">
+                        <a href="/booking">
                           <i class="icon_bag_alt"></i>
                         </a>
                       </li>
                       <li class="quick-view">
-                        <a href="#">+ Quick View</a>
+                        <a href="/booking">+ Quick View</a>
                       </li>
                       <li class="w-icon">
-                        <a href="#">
+                        <a href="/booking">
                           <i class="fa fa-random"></i>
                         </a>
                       </li>
@@ -311,7 +311,7 @@ function LandingPage() {
                   </div>
                   <div class="pi-text">
                     <div class="catagory-name">Rooms</div>
-                    <a href="#">
+                    <a href="/booking">
                       <h5>Single</h5>
                     </a>
                     <div class="product-price">$30.00</div>
@@ -325,15 +325,15 @@ function LandingPage() {
                     </div>
                     <ul>
                       <li class="w-icon active">
-                        <a href="#">
+                        <a href="/booking">
                           <i class="icon_bag_alt"></i>
                         </a>
                       </li>
                       <li class="quick-view">
-                        <a href="#">+ Quick View</a>
+                        <a href="/booking">+ Quick View</a>
                       </li>
                       <li class="w-icon">
-                        <a href="#">
+                        <a href="/booking">
                           <i class="fa fa-random"></i>
                         </a>
                       </li>
@@ -341,7 +341,7 @@ function LandingPage() {
                   </div>
                   <div class="pi-text">
                     <div class="catagory-name">Rooms</div>
-                    <a href="#">
+                    <a href="/booking">
                       <h5>Double</h5>
                     </a>
                     <div class="product-price">$40.00</div>
@@ -355,15 +355,15 @@ function LandingPage() {
                     </div>
                     <ul>
                       <li class="w-icon active">
-                        <a href="#">
+                        <a href="/booking">
                           <i class="icon_bag_alt"></i>
                         </a>
                       </li>
                       <li class="quick-view">
-                        <a href="#">+ Quick View</a>
+                        <a href="/booking">+ Quick View</a>
                       </li>
                       <li class="w-icon">
-                        <a href="#">
+                        <a href="/booking">
                           <i class="fa fa-random"></i>
                         </a>
                       </li>
@@ -371,7 +371,7 @@ function LandingPage() {
                   </div>
                   <div class="pi-text">
                     <div class="catagory-name">Rooms</div>
-                    <a href="#">
+                    <a href="/booking">
                       <h5>Family</h5>
                     </a>
                     <div class="product-price">$45.00</div>
@@ -385,15 +385,15 @@ function LandingPage() {
                     </div>
                     <ul>
                       <li class="w-icon active">
-                        <a href="#">
+                        <a href="/booking">
                           <i class="icon_bag_alt"></i>
                         </a>
                       </li>
                       <li class="quick-view">
-                        <a href="#">+ Quick View</a>
+                        <a href="/booking">+ Quick View</a>
                       </li>
                       <li class="w-icon">
-                        <a href="#">
+                        <a href="/booking">
                           <i class="fa fa-random"></i>
                         </a>
                       </li>
@@ -401,7 +401,7 @@ function LandingPage() {
                   </div>
                   <div class="pi-text">
                     <div class="catagory-name">Rooms</div>
-                    <a href="#">
+                    <a href="/booking">
                       <h5>Double</h5>
                     </a>
                     <div class="product-price">$35.00</div>

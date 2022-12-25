@@ -141,6 +141,9 @@ const Navbar = () => {
                       <a href="/services">Services</a>
                     </li>
                     <li>
+                      <a href="/bookingStatus">Booking Status</a>
+                    </li>
+                    <li>
                       <a href="/myorders">Cart</a>
                     </li>
                     <li>

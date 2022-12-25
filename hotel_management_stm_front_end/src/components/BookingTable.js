@@ -1,14 +1,23 @@
 import React, { useState, useEffect } from "react";
-import "../App.css";
+//import "../App.css";
 import AdminNavbar from "./AdminNavbar";
 import axios from "axios";
 import { Link } from "react-router-dom";
 
-export default function BookingTable(props) {
-  const { addOrEdit, recordForEdit } = props;
+import "./bookingTable.scss";
+import Table from "@mui/material/Table";
+import TableBody from "@mui/material/TableBody";
+import TableCell from "@mui/material/TableCell";
+import TableContainer from "@mui/material/TableContainer";
+import TableHead from "@mui/material/TableHead";
+import TableRow from "@mui/material/TableRow";
+import Paper from "@mui/material/Paper";
 
+export default function BookingTable(props) {
   const [bookedCustomers, setBookedCustomers] = useState([]);
   const [loading, setLoading] = useState(false);
+
+  const [recordForEdit, setRecordForEdit] = useState(null);
 
   useEffect(() => {
     setLoading(true);
@@ -23,34 +32,40 @@ export default function BookingTable(props) {
       });
   }, []);
 
-  useEffect(() =>{
+  useEffect(() => {
     refreshBookingTable();
-  }, [])
+  }, []);
+  const url = "https://localhost:44389/api/BookedCustomer/";
+  const bookingTableAPI = {
+    fetchAll: () => axios.get(url),
+    create: (newRecord) => axios.post(url, newRecord),
+    update: (id, updatedRecord) => axios.put(url + id, updatedRecord),
+    delete: (id) => axios.delete(url + id),
+  };
 
-  const bookingTableAPI = (url = 'https://localhost:44389/api/BookedCustomer/') =>{
-    return{
-        fetchAll: () => axios.get(url),
-        delete: id => axios.delete(url + id)
-      }
-  }
+  const refreshBookingTable = () => {
+    bookingTableAPI
+      .fetchAll()
+      .then((res) => setBookedCustomers(res.data))
+      .catch((err) => console.log(err));
+  };
 
-  const refreshBookingTable =()=>{
-    bookingTableAPI().fetchAll()
-    .then(res=>setBookedCustomers(res.data))
-    .catch(err => console.log(err))
-  }
-  
-   const onDelete = (id) => {
+  const onDelete = (id) => {
     if (window.confirm("Are you sure to delete this record?"))
-      bookingTableAPI()
+      bookingTableAPI
         .delete(id)
         .then((res) => refreshBookingTable())
         .catch((err) => console.log(err));
-  }
+  };
+
+  const changeStatus = (id, bookedCustomer) => {
+    bookingTableAPI.update(id, bookedCustomer);
+    refreshBookingTable();
+  };
 
   return (
     <>
-      <AdminNavbar />
+      {/* <AdminNavbar />
       <div className="row">
         <div className="col-md-1"></div>
         <div className="col-md-8">
@@ -81,7 +96,7 @@ export default function BookingTable(props) {
                         />
                       </td>
                       <th>{bookedCustomer.customerID}</th>
-                      <td>{bookedCustomer.startingDate}</td>
+                      <td>{(bookedCustomer.startingDate).split("T")[0]}</td>
                       <td>{bookedCustomer.numberOfDays}</td>
                       <td>{bookedCustomer.totalPrice}</td>
                       <td>{bookedCustomer.firstName}</td>
@@ -102,7 +117,134 @@ export default function BookingTable(props) {
             </table>
           </div>
         </div>
+      </div> */}
+
+      <AdminNavbar />
+      <div>
+        <label className="heading">Current Bookings</label>
       </div>
+      <TableContainer component={Paper} className="table212">
+        <Table sx={{ minWidth: 650 }} aria-label="simple table">
+          <TableHead className="tableHead">
+            <TableRow>
+              {/* <TableCell className="tableCell">Room</TableCell> */}
+              <TableCell className="tableCell">Booking ID</TableCell>
+              <TableCell className="tableCell">First Name</TableCell>
+              <TableCell className="tableCell">Last Name</TableCell>
+              <TableCell className="tableCell">Booking Date</TableCell>
+              <TableCell className="tableCell">Number of Days</TableCell>
+              <TableCell className="tableCell">Total Charge</TableCell>
+              <TableCell className="tableCell">Email Address</TableCell>
+              <TableCell className="tableCell">Mobile No</TableCell>
+              <TableCell className="tableCell">Status</TableCell>
+              <TableCell className="tableCell">Action</TableCell>
+            </TableRow>
+          </TableHead>
+          <TableBody>
+            {bookedCustomers.map((bookedCustomer, idx) => (
+              <TableRow key={bookedCustomer.customerID}>
+                {/* <TableCell className="tableCell">
+                  <div className="cellWrapper">
+                    <img
+                      src={bookedCustomer.roomimageSrc}
+                      alt=""
+                      className="image"
+                    />
+                  </div>
+                </TableCell> */}
+                <TableCell className="tableCell">
+                  {bookedCustomer.customerID}
+                </TableCell>
+                <TableCell className="tableCell">
+                  {bookedCustomer.firstName}
+                </TableCell>
+                <TableCell className="tableCell">
+                  {bookedCustomer.lastName}
+                </TableCell>
+                <TableCell className="tableCell">
+                  {bookedCustomer.startingDate.split("T")[0]}
+                </TableCell>
+                <TableCell className="tableCell">
+                  {bookedCustomer.numberOfDays}
+                </TableCell>
+                <TableCell className="tableCell">
+                  {bookedCustomer.totalPrice}
+                </TableCell>
+                <TableCell className="tableCell">
+                  {bookedCustomer.emailAddress}
+                </TableCell>
+                <TableCell className="tableCell">
+                  {bookedCustomer.mobileNumber}
+                </TableCell>
+                <TableCell className="tableCell">
+                  <span className={`roomStatus ${bookedCustomer.roomStatus}`}>
+                    {bookedCustomer.roomStatus}
+                  </span>
+                </TableCell>
+                <TableCell className="tableCell">
+                  <div className="cellAction">
+                    <div
+                      className="approveButton"
+                      onClick={() => {
+                        const bookedCusto = {
+                          customerID: bookedCustomer.customerID,
+                          roomimageSrc: bookedCustomer.roomimageSrc,
+                          firstName: bookedCustomer.firstName,
+                          lastName: bookedCustomer.lastName,
+                          startingDate: bookedCustomer.startingDate,
+                          numberOfDays: bookedCustomer.numberOfDays,
+                          totalPrice: bookedCustomer.totalPrice,
+                          emailAddress: bookedCustomer.emailAddress,
+                          mobileNumber: bookedCustomer.mobileNumber,
+                          roomStatus: "Approved",
+                        };
+
+                        changeStatus(bookedCustomer.customerID, bookedCusto);
+                      }}
+                    >
+                      Approve
+                    </div>
+
+                    <div
+                      className="declineButton"
+                      onClick={() => {
+                        const bookedCusto = {
+                          customerID: bookedCustomer.customerID,
+                          roomimageSrc: bookedCustomer.roomimageSrc,
+                          firstName: bookedCustomer.firstName,
+                          lastName: bookedCustomer.lastName,
+                          startingDate: bookedCustomer.startingDate,
+                          numberOfDays: bookedCustomer.numberOfDays,
+                          totalPrice: bookedCustomer.totalPrice,
+                          emailAddress: bookedCustomer.emailAddress,
+                          mobileNumber: bookedCustomer.mobileNumber,
+                          roomStatus: "Declined",
+                        };
+
+                        changeStatus(bookedCustomer.customerID, bookedCusto);
+                      }}
+                    >
+                      Decline
+                    </div>
+
+                    <div
+                      className="deleteButton"
+                      onClick={() =>
+                        onDelete(parseInt(bookedCustomer.customerID))
+                      }
+                    >
+                      Delete
+                    </div>
+                  </div>
+                </TableCell>
+                {/* <TableCell className="tableCell">
+                      <span className={`status ${row.status}`}>{row.status}</span>
+                    </TableCell>  */}
+              </TableRow>
+            ))}
+          </TableBody>
+        </Table>
+      </TableContainer>
     </>
   );
 }

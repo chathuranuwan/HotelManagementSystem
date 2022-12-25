@@ -33,9 +33,10 @@ const AdminNavbar = () => {
                 </div>
               </div>
               <div class="ht-right">
-                <a href="#" class="login-panel">
+                <a href="/sign-in" class="login-panel">
                   <i class="fa fa-user"></i> {setData2()}
                 </a>
+
                 <div class="lan-selector">
                   <select
                     class="language_drop"

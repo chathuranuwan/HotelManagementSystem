@@ -6,9 +6,11 @@ import { useNavigate } from "react-router-dom";
 import BookedCustomer from "./BookedCustomer";
 import { Link } from "react-router-dom";
 import Navbar from "../Navbar";
+import jwt from "jwt-decode";
 
 function Booking() {
   const [rooms, setRooms] = useState([]);
+  const [price, setPrice] = useState(0);
   const [loading, setLoading] = useState(false);
   const [search, setSearch] = useState("");
   const [filteredRooms, setFilteredRooms] = useState([]);
@@ -28,8 +30,9 @@ function Booking() {
 
   useEffect(() => {
     setFilteredRooms(
-      rooms.filter((room) =>
-        room.category.toLowerCase().includes(search.toLowerCase())
+      rooms.filter(
+        (room) => room.category.toLowerCase().includes(search.toLowerCase())
+        // || room.pricePerDay < parseInt(search, 10)
       )
     );
   }, [search, rooms]);
@@ -41,8 +44,9 @@ function Booking() {
   return (
     <>
       <Navbar />
-      <h1>Room List</h1>
-      <div className="col-sm-6 offset-sm-5">
+      <br />
+      <h1>Search Rooms</h1>
+      {/* <div className="col-sm-6 offset-sm-5">
         <label className="form-lable h4">Search</label>
         <input
           className="form-control"
@@ -50,6 +54,21 @@ function Booking() {
           placeholder="Search rooms"
           onChange={(e) => setSearch(e.target.value)}
         />
+      </div> */}
+      <div className="col-sm-6 offset-sm-5">
+        <label align="center" weight="bold">
+          Select Room Type
+        </label>
+        <select
+          className="form-control"
+          onChange={(e) => setSearch(e.target.value)}
+        >
+          <span></span>
+          <option hidden>Room Type</option>
+          <option>Single</option>
+          <option>Double</option>
+          <option>Family</option>
+        </select>
       </div>
 
       {filteredRooms.map((room, idx) => (
@@ -65,8 +84,29 @@ const SystemManageApi = (props) => {
   const [count, setCount] = useState(1);
   const navigate = useNavigate();
 
+  const setData3 = () => {
+    const token = localStorage.getItem("token");
+    if (token) {
+      const tokenData = jwt(token);
+      return tokenData.Id;
+    }
+  };
+
+  const setData5 = () => {
+    const token = localStorage.getItem("token");
+    if (token) {
+      const tokenData = jwt(token);
+      return tokenData.Email;
+    }
+  };
+
+  setData3();
+
   const handleRoute = () => {
     let obj = {
+      email: setData5(),
+      // roomNo:roomNumber,
+      userId: setData3(),
       image: imageSrc,
       perDay: pricePerDay,
       days: count,
@@ -105,7 +145,7 @@ const SystemManageApi = (props) => {
 
                     <div className="input-group">
                       <div>
-                        <label className="days-2">Days</label>
+                        <label className="days">Items</label>
                       </div>
                       <button
                         type="button"
@@ -125,9 +165,9 @@ const SystemManageApi = (props) => {
                         +
                       </button>
                     </div>
-
+                    <br />
                     <span id="total" name="total">
-                      Total Charge LKR {pricePerDay * count}
+                      Total Charge: (LKR) {pricePerDay * count}
                     </span>
 
                     <br />

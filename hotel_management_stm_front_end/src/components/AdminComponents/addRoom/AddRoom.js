@@ -7,6 +7,8 @@ import RoomsData from '../roomsDatatable/RoomsData';
 //import Navbar from '../../../Navbar';
 import AdminNavbar from '../../AdminNavbar';
 import { fontGrid } from '@mui/material/styles/cssUtils';
+import '@fontsource/roboto/500.css';
+import { Box, Button, DateInput, Form, FormField } from 'grommet';
 //import DriveFolderUploadOutlinedIcon from "@mui/icons-material/DriveFolderUploadOutlined";
 
 const defaultImage = 'https:/icon-library.com/images/no-image-icon/no-image-icon-0.jpg'
@@ -96,7 +98,7 @@ export default function AddRoom(props) {
         formData.append('floor', values.floor)
         formData.append('pricePerDay', values.pricePerDay)
         formData.append('category', values.category)
-         formData.append('status', values.status)
+        formData.append('status', values.status)
         formData.append('imageFile', values.imageFile)
         addOrEdit(formData, resetForm)
     }

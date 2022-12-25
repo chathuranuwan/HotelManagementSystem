@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import "../App.css";
 import AdminNavbar from "./AdminNavbar";
 import axios from "axios";
-import { Button } from "bootstrap";
+import { width } from "@mui/system";
 
 export default function Customerview(props) {
   const { addOrEdit, recordForEdit } = props;
@@ -23,6 +23,15 @@ export default function Customerview(props) {
       });
   }, []);
 
+  const coniremItem = (data) => {
+    data.status = !data.status;
+    axios
+      .put(`https://localhost:44389/api/customer/${data.userNumber}`, data)
+      .then((res) => {
+        setLoading(false);
+      });
+  };
+
   return (
     <>
       <AdminNavbar />
@@ -33,7 +42,7 @@ export default function Customerview(props) {
             <table className="table table-bordered">
               <thead>
                 <tr>
-                  <th>Food Item</th>
+                  <th style={{ width: "80px" }}>Food Item</th>
                   <th>Number of Items</th>
                   <th>Total Charge</th>
                   <th>First Name</th>
@@ -61,6 +70,13 @@ export default function Customerview(props) {
                       <td>{customer.emailAddress}</td>
                       <th>{customer.mobileNumber}</th>
                       <th>{customer.roomNumber}</th>
+                      <>
+                        <th>
+                          <button onClick={() => coniremItem(customer)}>
+                            {customer.status ? "Unconfirem" : "Confirem"}
+                          </button>
+                        </th>
+                      </>
                     </tr>
                   );
                 })}

@@ -45,13 +45,10 @@ export default function OrderedList(props) {
               <thead>
                 <tr>
                   <th>Food Item</th>
+                  <th>Username</th>
                   <th>Number of Items</th>
                   <th>Total Charge</th>
-                  <th>First Name</th>
-                  <th>Last Name</th>
-                  <th>Email Address</th>
-                  <th>Mobile Number</th>
-                  <th>Room Number</th>
+
                   <th>status</th>
                 </tr>
               </thead>
@@ -65,14 +62,10 @@ export default function OrderedList(props) {
                           className="cart3-img-top "
                         />
                       </td>
+                      <td>{customer.firstName}</td>
                       <td>{customer.numberOfItems}</td>
                       <td>{customer.totalPrice}</td>
-                      <td>{customer.firstName}</td>
-                      <td>{customer.lastName}</td>
-                      <td>{customer.emailAddress}</td>
-                      <th>{customer.mobileNumber}</th>
-                      <th>{customer.roomNumber}</th>
-                      <th>{<Label>pending</Label>}</th>
+                      <td>{customer.status ? "Accept" : "Pending"}</td>
                     </tr>
                   );
                 })}

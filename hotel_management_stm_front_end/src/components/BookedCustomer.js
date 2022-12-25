@@ -3,9 +3,20 @@ import "../App.css";
 import axios from "axios";
 // import DatePicker from "react-datepicker";
 // import "react-datepicker/dist/react-datepicker.css";
+import { Box, Button, DateInput, Form, FormField } from "grommet";
+
+import "./bookingTable.scss";
+import Table from "@mui/material/Table";
+import TableBody from "@mui/material/TableBody";
+import TableCell from "@mui/material/TableCell";
+import TableContainer from "@mui/material/TableContainer";
+import TableHead from "@mui/material/TableHead";
+import TableRow from "@mui/material/TableRow";
+import Paper from "@mui/material/Paper";
 
 export default function BookedCustomer(props) {
   const { addOrEdit, recordForEdit } = props;
+  const [count, setCount] = useState(1);
 
   const [bookings, setBookings] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -30,17 +41,19 @@ export default function BookedCustomer(props) {
     roomimageName: "",
     numberOfDays: "",
     totalPrice: "",
+    userNumber: "",
     firstName: "",
     lastName: "",
     emailAddress: "",
     mobileNumber: "",
     startingDate: "",
+    roomStatus: "Pending",
+    //startingDate:null,
     roomimageFile: "",
   };
 
   const [values, setValues] = useState(initialFieldValues);
   const [errors, setErrors] = useState({});
-  
 
   useEffect(() => {
     if (recordForEdit != null) setValues(recordForEdit);
@@ -75,7 +88,7 @@ export default function BookedCustomer(props) {
     temp.roomimageSrc = values.roomimageSrc == "";
     temp.firstName = values.firstName == "" ? false : true;
     temp.lastName = values.lastName == "" ? false : true;
-    temp.emailAddress = values.emailAddress == "" ? false : true;
+    // temp.emailAddress = values.emailAddress == "" ? false : true;
     temp.mobileNumber = values.mobileNumber == "" ? false : true;
     temp.startingDate = values.startingDate == "" ? false : true;
     temp.numberOfDays = values.numberOfDays == "";
@@ -98,14 +111,16 @@ export default function BookedCustomer(props) {
 
       formData.append("roomimageName", data.image);
 
-      formData.append("numberOfDays", data.days);
-      formData.append("totalPrice", data.total);
+      formData.append("numberOfDays", count);
+      formData.append("totalPrice", data.perDay * count);
       formData.append("customerID", values.customerID);
+      formData.append("userNumber", data.userId);
       formData.append("firstName", values.firstName);
       formData.append("lastName", values.lastName);
       formData.append("startingDate", values.startingDate);
-      formData.append("emailAddress", values.emailAddress);
+      formData.append("emailAddress", data.email);
       formData.append("mobileNumber", values.mobileNumber);
+      formData.append("roomStatus", values.roomStatus);
       addOrEdit(formData, resetForm);
     }
   };
@@ -125,13 +140,14 @@ export default function BookedCustomer(props) {
     <>
       <form outoComplete="off" noValidate onSubmit={handleFormSubmit}>
         <div className="row">
-          <div className="col-md-7">
-            <div className="card3">
+          <div className="col-md-1"></div>
+          <div className="col-md-5">
+            <div className="card115">
               <div className="container text-center">
-                <p className="lead">Enter your details</p>
+                <p className="lead2">Enter your details</p>
               </div>
-              <div className="card-body3">
-                <div className="form-group">
+              <div>
+                <div className="form-group" align="center">
                   <input
                     className={"form-control" + applyErrorClass("firstName")}
                     placeholder="first Name"
@@ -141,7 +157,7 @@ export default function BookedCustomer(props) {
                     id="image-uploader"
                   />
                 </div>
-                <div className="form-group">
+                <div className="form-group" align="center">
                   <input
                     className={"form-control" + applyErrorClass("lastName")}
                     placeholder="Last Name"
@@ -150,17 +166,28 @@ export default function BookedCustomer(props) {
                     onChange={handleInputChange}
                   />
                 </div>
-                <div className="form-group">
+                {/* <div className="form-group" align ="center">
                   <input
-                    className={"form-control" + applyErrorClass("emailAddress")}
+                    className={"form-control"}
                     placeholder="Email Address"
                     name="emailAddress"
-                    value={values.emailAddress}
+                    type="email"
+                    Value={data.email}
                     onChange={handleInputChange}
+                  />
+                </div> */}
+
+                <div className="form-group" align="center">
+                  <input
+                    className={"form-control"}
+                    name="roomStatus"
+                    type="string"
+                    value={(values.roomStatus = "Pending")}
+                    hidden
                   />
                 </div>
 
-                <div className="form-group">
+                <div className="form-group" align="center">
                   <input
                     className={"form-control" + applyErrorClass("mobileNumber")}
                     placeholder="Mobile Number"
@@ -170,14 +197,60 @@ export default function BookedCustomer(props) {
                   />
                 </div>
 
-                <div className="form-group">
+                <div className="form-group" align="center">
                   <input
                     className={"form-control" + applyErrorClass("startingDate")}
                     placeholder="Starting Date"
                     name="startingDate"
-                    value={values.startDate}
+                    type="date"
+                    value={values.startingDate}
                     onChange={handleInputChange}
                   />
+                </div>
+
+                {/* <Box align="center" pad="large">
+                    <Form
+                        timeFormat={true}
+                        className={"form-control" + applyErrorClass("startingDate")}
+                        value={values.startingDate}
+                        name="startingDate"
+                        onChange={handleInputChange}
+                        // onSubmit={({ value: nextValue }) => {
+                        // console.log(nextValue);
+                        // setValue({ value: '' });
+                        // }}
+                    >
+                      <FormField>
+                        <DateInput format="mm/dd/yyyy" />
+                      </FormField>
+                    </Form>
+                  </Box> */}
+
+                <div className="input-group" align="center">
+                  <br />
+                  <div>
+                    <label className="days2">
+                      Days
+                      <t />
+                    </label>
+                  </div>
+                  <button
+                    type="button"
+                    className="input-group21-text-1"
+                    onClick={() => setCount(count - 1)}
+                  >
+                    -
+                  </button>
+                  <div className="input-group21-text" id="days" name="days">
+                    {count}
+                  </div>
+                  <button
+                    type="button"
+                    className="input-group21-text-1"
+                    onClick={() => setCount(count + 1)}
+                  >
+                    +
+                  </button>
                 </div>
 
                 <div className="form-group text-center">
@@ -189,12 +262,12 @@ export default function BookedCustomer(props) {
             </div>
           </div>
 
-          <div className="col-md-4">
+          <div className="col-md-5" align="center">
             <div className="table-body">
               <table className="table table-bordered">
                 <thead>
                   <tr>
-                    <th>Room</th>
+                    {/* <th>Room No</th> */}
                     <th>Price Per Day</th>
                     <th>Number of Days</th>
                     <th>Total Charge</th>
@@ -202,23 +275,29 @@ export default function BookedCustomer(props) {
                 </thead>
                 <tbody>
                   <tr>
-                    <td name="roomimageName" value={values.roomimageSrc}>
+                    {/* <td name="roomimageName" value={values.roomimageSrc}>
                       <img src={data.image} className="cart3-img-top " />
-                    </td>
+                    </td> */}
+
+                    {/* <td name="roomNumber" value={values.roomNumber}>
+                      {data.roomNo}
+                    </td> */}
+
                     <td>{data.perDay}</td>
 
-                    <td name="numberOfDays" value={values.numberOfDays}>
-                      {data.days}
+                    <td name="numberOfDays" value={count}>
+                      {count}
                     </td>
 
-                    <td name="totalPrice" value={values.totalPrice}>
-                      {data.total}
+                    <td name="totalPrice" value={data.perDay * count}>
+                      {data.perDay * count}
                     </td>
                   </tr>
                 </tbody>
               </table>
             </div>
           </div>
+          <div className="col-md-1"></div>
         </div>
       </form>
     </>

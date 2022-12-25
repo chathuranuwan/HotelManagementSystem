@@ -1,22 +1,96 @@
-.aboutTop{
-    align-items: center;
-    font-family:"Aboreto" ;
-    
+.aboutTop {
+  align-items: center;
+  font-family: "Arial";
 }
 
-
-.aboutTop{
-    width: auto;
+.aboutTop {
+  width: auto;
 }
 
-.aboutBottom{
-    display:flex;
-    align-items: center;
-    margin-top: 0px;  
-    font-family:"Aboreto" ;
+.aboutBottom {
+  display: flex;
+  align-items: center;
+  margin-top: 0px;
+  font-family: "Arial";
 }
 
-.aboutBottom{
-    width: fit-content;
+.aboutBottom {
+  width: fit-content;
 }
 
+.heading h1 {
+  align-items: center;
+  text-align: center;
+  text-transform: uppercase;
+  margin-top: 2rem;
+  font-size: 4rem;
+  font-family: Arial;
+  font-weight: 600;
+  color: rgb(0, 0, 0);
+  justify-content: space-between;
+}
+
+.des-text {
+  width: 100%;
+  text-align: center;
+}
+
+.des-text p {
+  font-size: 1.4rem;
+  font-family: Arial;
+  font-weight: 200;
+  color: rgb(0, 0, 0);
+  margin-left: 2rem;
+  margin-right: 2rem;
+  text-align: center;
+  padding-bottom: 1rem;
+}
+
+.image {
+  margin-left: 7rem;
+  position: relative;
+  justify-content: space-between;
+  size: 2rem;
+  width: 60%;
+  display: flex;
+  gap: 30px;
+  padding-bottom: 3rem;
+  z-index: -99;
+}
+
+.image img {
+  object-fit: cover;
+  border-radius: 6px;
+  box-shadow: -1px 1px 62 px -18px rgba(0, 0, 0, 0.3);
+  align-items: center;
+  justify-items: center;
+}
+
+.main-heading {
+  text-align: center;
+  text-transform: uppercase;
+  text-decoration: none;
+  margin-top: 2rem;
+  font-size: 3rem;
+  font-family: Arial;
+  font-weight: 600;
+  color: rgb(5, 1, 15);
+}
+
+.heading1 {
+  font-size: 2rem;
+  font-family: Arial;
+  font-weight: 20;
+  color: rgb(68, 5, 55);
+  text-align: center;
+  padding-bottom: 1rem;
+}
+
+.para {
+  font-size: 1rem;
+  font-family: Arial;
+  font-weight: 20;
+  color: rgb(17, 10, 119);
+  text-align: center;
+  padding-bottom: 1rem;
+}
