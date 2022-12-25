@@ -3,6 +3,7 @@ import "../App.css";
 import axios from "axios";
 // import DatePicker from "react-datepicker";
 // import "react-datepicker/dist/react-datepicker.css";
+<<<<<<< HEAD
 import { Box, Button, DateInput, Form, FormField } from "grommet";
 
 import "./bookingTable.scss";
@@ -13,6 +14,9 @@ import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
+=======
+import { Box, Button, DateInput, Form, FormField } from 'grommet';
+>>>>>>> 08298f13a48fa32c76194a29f52dd30bb42555c8
 
 export default function BookedCustomer(props) {
   const { addOrEdit, recordForEdit } = props;
@@ -35,6 +39,8 @@ export default function BookedCustomer(props) {
       });
   }, []);
 
+  
+
   const initialFieldValues = {
     customerID: 0,
     roomimageSrc: "",
@@ -46,8 +52,13 @@ export default function BookedCustomer(props) {
     lastName: "",
     emailAddress: "",
     mobileNumber: "",
+<<<<<<< HEAD
     startingDate: "",
     roomStatus: "Pending",
+=======
+    startingDate : "",
+    roomStatus:"Pending",
+>>>>>>> 08298f13a48fa32c76194a29f52dd30bb42555c8
     //startingDate:null,
     roomimageFile: "",
   };
@@ -139,6 +150,7 @@ export default function BookedCustomer(props) {
   return (
     <>
       <form outoComplete="off" noValidate onSubmit={handleFormSubmit}>
+<<<<<<< HEAD
         <div className="row">
           <div className="col-md-1"></div>
           <div className="col-md-5">
@@ -263,6 +275,10 @@ export default function BookedCustomer(props) {
           </div>
 
           <div className="col-md-5" align="center">
+=======
+
+      <div className="col-md-12" align="center">
+>>>>>>> 08298f13a48fa32c76194a29f52dd30bb42555c8
             <div className="table-body">
               <table className="table table-bordered">
                 <thead>
@@ -297,8 +313,110 @@ export default function BookedCustomer(props) {
               </table>
             </div>
           </div>
+<<<<<<< HEAD
           <div className="col-md-1"></div>
         </div>
+=======
+        
+          <div className="col-md-12">
+            <div className="card11" align='center'>
+              <div className="container text-center">
+                <p className="lead">Enter your details</p>
+              </div>
+              <div className="card-body3">
+                <div className="form-group" align ="center">
+                  <input
+                    className={"form-control" + applyErrorClass("firstName")}
+                    placeholder="first Name"
+                    name="firstName"
+                    value={values.firstName}
+                    onChange={handleInputChange}
+                    id="image-uploader"
+                  />
+                </div>
+                <div className="form-group" align ="center">
+                  <input
+                    className={"form-control" + applyErrorClass("lastName")}
+                    placeholder="Last Name"
+                    name="lastName"
+                    value={values.lastName}
+                    onChange={handleInputChange}
+                  />
+                </div>
+                <div className="form-group" align ="center">
+                  <input
+                    className={"form-control" + applyErrorClass("emailAddress")}
+                    placeholder="Email Address"
+                    name="emailAddress"
+                    type="email"
+                    value={values.emailAddress}
+                    onChange={handleInputChange}
+                  />
+                </div>
+
+                <div className="form-group" align ="center">
+                  <input
+                    className={"form-control"}
+                    name="roomStatus"
+                    type="string"
+                    value={values.roomStatus="Pending"}
+                    hidden
+                  />
+                </div>
+
+                <div className="form-group" align ="center">
+                  <input
+                    className={"form-control" + applyErrorClass("mobileNumber")}
+                    placeholder="Mobile Number"
+                    name="mobileNumber"
+                    value={values.mobileNumber}
+                    onChange={handleInputChange}
+                  />
+                </div>
+
+                <div className="form-group" align ="center">
+                  <input
+                    className={"form-control" + applyErrorClass("startingDate")}
+                    placeholder="Starting Date"
+                    name="startingDate"
+                    type="date"
+                    value={values.startingDate}
+                    onChange={handleInputChange}
+                  />
+                </div>
+
+                
+                
+                  {/* <Box align="center" pad="large">
+                    <Form
+                        timeFormat={true}
+                        className={"form-control" + applyErrorClass("startingDate")}
+                        value={values.startingDate}
+                        name="startingDate"
+                        onChange={handleInputChange}
+                        // onSubmit={({ value: nextValue }) => {
+                        // console.log(nextValue);
+                        // setValue({ value: '' });
+                        // }}
+                    >
+                      <FormField>
+                        <DateInput format="mm/dd/yyyy" />
+                      </FormField>
+                    </Form>
+                  </Box> */}
+
+                
+
+                <div className="form-group text-center">
+                  <button type="submit" className="btn btn-light">
+                    Submit
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        
+>>>>>>> 08298f13a48fa32c76194a29f52dd30bb42555c8
       </form>
     </>
   );

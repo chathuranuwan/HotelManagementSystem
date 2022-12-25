@@ -24,7 +24,10 @@ import BookedCustomerDetails from "./components/BookedCustomerDetails";
 import BookingTable from "./components/BookingTable";
 import OrderedList from "./components/OrderedList";
 import Test from "./components/Test";
+<<<<<<< HEAD
 import CustomerViewBooking from "./components/CustomerViewBooking";
+=======
+>>>>>>> 08298f13a48fa32c76194a29f52dd30bb42555c8
 
 function App() {
   return (
@@ -58,8 +61,12 @@ function App() {
           <Route path="/listedRooms" element={<BookingTable />} />
           <Route path="/test" element={<Test />} />
 
+<<<<<<< HEAD
           <Route path="/booking" element={<Test />} />
           <Route path="/bookingStatus" element={<CustomerViewBooking />} />
+=======
+
+>>>>>>> 08298f13a48fa32c76194a29f52dd30bb42555c8
         </Routes>
       </Router>
     </>

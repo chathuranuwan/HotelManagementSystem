@@ -11,22 +11,35 @@ import CardMedia from "@mui/material/CardMedia";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import { margin } from "@mui/system";
+<<<<<<< HEAD
 import { useNavigate } from "react-router-dom";
 import { useHistory } from "react-router-dom";
 import { Link } from "react-router-dom";
 import Navbar from "../Navbar";
 import jwt from "jwt-decode";
+=======
+
+
+
+>>>>>>> 08298f13a48fa32c76194a29f52dd30bb42555c8
 
 export default function Test() {
   const [Test, setTest] = useState([]);
   const [recordForEdit, setRecordForEdit] = useState(null);
+<<<<<<< HEAD
   const [count, setCount] = useState(1);
+=======
+>>>>>>> 08298f13a48fa32c76194a29f52dd30bb42555c8
 
   useEffect(() => {
     refreshTest();
   }, []);
 
+<<<<<<< HEAD
   const SystemManageApi2 = (url = "https://localhost:44389/api/Room/") => {
+=======
+  const SystemManageApi = (url = "https://localhost:44389/api/Room/") => {
+>>>>>>> 08298f13a48fa32c76194a29f52dd30bb42555c8
     return {
       fetchAll: () => axios.get(url),
       create: (newRecord) => axios.post(url, newRecord),
@@ -36,7 +49,11 @@ export default function Test() {
   };
 
   function refreshTest() {
+<<<<<<< HEAD
     SystemManageApi2()
+=======
+    SystemManageApi()
+>>>>>>> 08298f13a48fa32c76194a29f52dd30bb42555c8
       .fetchAll()
       .then((res) => setTest(res.data))
       .catch((err) => console.log(err));
@@ -44,7 +61,11 @@ export default function Test() {
 
   const addOrEdit = (formData, onSuccess) => {
     if (formData.get("roomID") == "0")
+<<<<<<< HEAD
       SystemManageApi2()
+=======
+      SystemManageApi()
+>>>>>>> 08298f13a48fa32c76194a29f52dd30bb42555c8
         .create(formData)
         .then((res) => {
           onSuccess();
@@ -52,7 +73,11 @@ export default function Test() {
         })
         .catch((err) => console.log(err));
     else
+<<<<<<< HEAD
       SystemManageApi2()
+=======
+      SystemManageApi()
+>>>>>>> 08298f13a48fa32c76194a29f52dd30bb42555c8
         .update(formData.get("roomID"), formData)
         .then((res) => {
           onSuccess();
@@ -68,22 +93,64 @@ export default function Test() {
   const onDelete = (e, id) => {
     e.stopPropagation();
     if (window.confirm("Are you sure to delete this record?"))
+<<<<<<< HEAD
       SystemManageApi2()
+=======
+      SystemManageApi()
+>>>>>>> 08298f13a48fa32c76194a29f52dd30bb42555c8
         .delete(id)
         .then((res) => refreshTest())
         .catch((err) => console.log(err));
   };
 
+<<<<<<< HEAD
   const imageCart = (data) => (
     <div className="cardHolder">
       <Card className="cardBig" sx={{ maxWidth: 345 }}>
         <CardMedia
           className="cardBig_image"
+=======
+
+
+
+  const imageCart = (data) => (
+
+    
+    // <div
+    //   className="card"
+    //   onClick={() => {
+    //     showRecordDetails(data);
+    //   }}
+    // >
+    //   <div className="cardImage">
+    //     <img src={data.imageSrc} className="cart-img-top" />
+    //   </div>
+
+    //   <div className="card-body">
+    //     <h5>{data.roomNumber}</h5>
+    //     <span>{data.category}</span>
+
+    //     <br />
+    //     <button
+    //       className="btn btn-light delete-button"
+    //       onClick={(e) => onDelete(e, parseInt(data.roomID))}
+    //     >
+    //       <i className="far fa-trash-alt"></i>
+    //     </button>
+    //   </div>
+    // </div>
+    <div className="cardHolder">
+      <Card
+        sx={{ maxWidth: 345 }}
+      >
+        <CardMedia
+>>>>>>> 08298f13a48fa32c76194a29f52dd30bb42555c8
           sx={{ height: 240 }}
           style={{ margin: "10px" }}
           image={data.imageSrc}
           title="green iguana"
         />
+<<<<<<< HEAD
         <CardContent align="center">
           <Typography gutterBottom variant="h6" component="div">
             Room NO {data.roomNumber}
@@ -132,10 +199,26 @@ export default function Test() {
             Book
           </Button>
         </CardContent>
+=======
+        <CardContent>
+          <Typography gutterBottom variant="h5" component="div">
+            Lizard
+          </Typography>
+          <Typography variant="body2" color="text.secondary">
+            Lizards are a widespread group of squamate reptiles, with over 6,000
+            species, ranging across all continents except Antarctica
+          </Typography>
+        </CardContent>
+        <CardActions>
+          <Button size="small">Share</Button>
+          <Button size="small">Learn More</Button>
+        </CardActions>
+>>>>>>> 08298f13a48fa32c76194a29f52dd30bb42555c8
       </Card>
     </div>
   );
 
+<<<<<<< HEAD
   const navigate = useNavigate();
 
   const setData3 = () => {
@@ -236,6 +319,11 @@ export default function Test() {
         <br />
         <h1>Book Rooms</h1>
       </div>
+=======
+  return (
+    <>
+      <AdminNavbar />
+>>>>>>> 08298f13a48fa32c76194a29f52dd30bb42555c8
       <div>
         <table className="col-md-12">
           <tbody>

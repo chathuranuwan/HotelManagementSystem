@@ -338,12 +338,19 @@ table div.card2 img {
   padding-right: 150px;
 }
 
+<<<<<<< HEAD
 .card11 {
+=======
+
+.card11 {
+  
+>>>>>>> 08298f13a48fa32c76194a29f52dd30bb42555c8
   margin-top: 40px;
   background-color: rgba(140, 141, 74, 0.945);
   border: none;
   transition: transform 0.2s;
 }
+<<<<<<< HEAD
 
 .input-group21 {
   margin-left: 190px;
@@ -387,3 +394,5 @@ table div.card2 img {
   font-weight: 400;
   color: #35dcbd;
 }
+=======
+>>>>>>> 08298f13a48fa32c76194a29f52dd30bb42555c8

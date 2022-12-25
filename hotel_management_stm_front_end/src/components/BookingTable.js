@@ -13,12 +13,42 @@ import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 
+<<<<<<< HEAD
+=======
+const initialFieldValues = {
+  customerID: 0,
+  roomimageSrc: "",
+  roomimageName: "",
+  numberOfDays: "",
+  totalPrice: "",
+  firstName: "",
+  lastName: "",
+  emailAddress: "",
+  mobileNumber: "",
+  startingDate: "",
+  roomStatus: "",
+  //startingDate:null,
+  roomimageFile: "",
+};
+
+>>>>>>> 08298f13a48fa32c76194a29f52dd30bb42555c8
 export default function BookingTable(props) {
   const [bookedCustomers, setBookedCustomers] = useState([]);
   const [loading, setLoading] = useState(false);
 
+<<<<<<< HEAD
   const [recordForEdit, setRecordForEdit] = useState(null);
 
+=======
+  const [values, setValues] = useState(initialFieldValues);
+
+  const [recordForEdit, setRecordForEdit] = useState(null);
+
+  useEffect(() => {
+    if (recordForEdit != null) setValues(recordForEdit);
+  }, [recordForEdit]);
+
+>>>>>>> 08298f13a48fa32c76194a29f52dd30bb42555c8
   useEffect(() => {
     setLoading(true);
     axios
@@ -35,6 +65,7 @@ export default function BookingTable(props) {
   useEffect(() => {
     refreshBookingTable();
   }, []);
+<<<<<<< HEAD
   const url = "https://localhost:44389/api/BookedCustomer/";
   const bookingTableAPI = {
     fetchAll: () => axios.get(url),
@@ -50,6 +81,24 @@ export default function BookingTable(props) {
       .catch((err) => console.log(err));
   };
 
+=======
+  const url = "https://localhost:44389/api/BookedCustomer/"
+  const bookingTableAPI ={
+      fetchAll: () => axios.get(url),
+      create: (newRecord) => axios.post(url, newRecord),
+      update: (id, updatedRecord) => axios.put(url + id, updatedRecord),
+      delete: (id) => axios.delete(url + id),
+    };
+
+
+  const refreshBookingTable = () => {
+    bookingTableAPI
+      .fetchAll()
+      .then((res) => setBookedCustomers(res.data))
+      .catch((err) => console.log(err));
+  };
+
+>>>>>>> 08298f13a48fa32c76194a29f52dd30bb42555c8
   const onDelete = (id) => {
     if (window.confirm("Are you sure to delete this record?"))
       bookingTableAPI
@@ -58,9 +107,42 @@ export default function BookingTable(props) {
         .catch((err) => console.log(err));
   };
 
+<<<<<<< HEAD
   const changeStatus = (id, bookedCustomer) => {
     bookingTableAPI.update(id, bookedCustomer);
     refreshBookingTable();
+=======
+  const resetForm = () => {
+    setValues(initialFieldValues);
+    document.getElementById("image-uploader").value = null;
+  };
+
+  const addOrEdit = (formData, onSuccess) => {
+    if (formData.get("customerID") == "0")
+      bookingTableAPI
+        .create(formData)
+        .then((res) => {
+          onSuccess();
+          refreshBookingTable();
+          console.log('Ok');
+        })
+        .catch((err) => console.log(err)); 
+    else
+      bookingTableAPI
+        .update(formData.get("customerID"), formData)
+        .then((res) => {
+          onSuccess();
+          refreshBookingTable();
+          console.log('Not');
+        })
+        .catch((err) => console.log(err));
+  };
+
+  const changeStatus = (id,bookedCustomer) => {
+    
+    bookingTableAPI.update(id,bookedCustomer)
+    refreshBookingTable()
+>>>>>>> 08298f13a48fa32c76194a29f52dd30bb42555c8
   };
 
   return (
@@ -123,11 +205,19 @@ export default function BookingTable(props) {
       <div>
         <label className="heading">Current Bookings</label>
       </div>
+<<<<<<< HEAD
       <TableContainer component={Paper} className="table212">
         <Table sx={{ minWidth: 650 }} aria-label="simple table">
           <TableHead className="tableHead">
             <TableRow>
               {/* <TableCell className="tableCell">Room</TableCell> */}
+=======
+      <TableContainer component={Paper} className="table">
+        <Table sx={{ minWidth: 650 }} aria-label="simple table">
+          <TableHead className="tableHead">
+            <TableRow>
+              <TableCell className="tableCell">Room</TableCell>
+>>>>>>> 08298f13a48fa32c76194a29f52dd30bb42555c8
               <TableCell className="tableCell">Booking ID</TableCell>
               <TableCell className="tableCell">First Name</TableCell>
               <TableCell className="tableCell">Last Name</TableCell>
@@ -143,7 +233,11 @@ export default function BookingTable(props) {
           <TableBody>
             {bookedCustomers.map((bookedCustomer, idx) => (
               <TableRow key={bookedCustomer.customerID}>
+<<<<<<< HEAD
                 {/* <TableCell className="tableCell">
+=======
+                <TableCell className="tableCell">
+>>>>>>> 08298f13a48fa32c76194a29f52dd30bb42555c8
                   <div className="cellWrapper">
                     <img
                       src={bookedCustomer.roomimageSrc}
@@ -151,7 +245,11 @@ export default function BookingTable(props) {
                       className="image"
                     />
                   </div>
+<<<<<<< HEAD
                 </TableCell> */}
+=======
+                </TableCell>
+>>>>>>> 08298f13a48fa32c76194a29f52dd30bb42555c8
                 <TableCell className="tableCell">
                   {bookedCustomer.customerID}
                 </TableCell>
@@ -177,6 +275,7 @@ export default function BookingTable(props) {
                   {bookedCustomer.mobileNumber}
                 </TableCell>
                 <TableCell className="tableCell">
+<<<<<<< HEAD
                   <span className={`roomStatus ${bookedCustomer.roomStatus}`}>
                     {bookedCustomer.roomStatus}
                   </span>
@@ -226,11 +325,45 @@ export default function BookingTable(props) {
                     >
                       Decline
                     </div>
+=======
+                  {bookedCustomer.roomStatus}
+                </TableCell>
+                <TableCell className="tableCell">
+                  <div className="cellAction">
+                    
+                      <button className="approveButton"
+                        onClick={() => {
+                          const bookedCusto = {
+                            customerID:bookedCustomer.customerID,
+                            roomimageSrc:bookedCustomer.roomimageSrc,
+                            firstName:bookedCustomer.firstName,
+                            lastName:bookedCustomer.lastName,
+                            startingDate:bookedCustomer.startingDate,
+                            numberOfDays:bookedCustomer.numberOfDays,
+                            totalPrice:bookedCustomer.totalPrice,
+                            emailAddress:bookedCustomer.emailAddress,
+                            mobileNumber:bookedCustomer.mobileNumber,
+                            roomStatus:"Approved"
+                          }
+                
+                          changeStatus(bookedCustomer.customerID,bookedCusto);
+                        }}
+                      >
+                        Approve
+                      </button>
+                    
+
+                    <div className="declineButton">Decline</div>
+>>>>>>> 08298f13a48fa32c76194a29f52dd30bb42555c8
 
                     <div
                       className="deleteButton"
                       onClick={() =>
+<<<<<<< HEAD
                         onDelete(parseInt(bookedCustomer.customerID))
+=======
+                      onDelete(parseInt(bookedCustomer.customerID))
+>>>>>>> 08298f13a48fa32c76194a29f52dd30bb42555c8
                       }
                     >
                       Delete

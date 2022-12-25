@@ -30,9 +30,21 @@ function Booking() {
 
   useEffect(() => {
     setFilteredRooms(
+<<<<<<< HEAD
       rooms.filter(
         (room) => room.category.toLowerCase().includes(search.toLowerCase())
         // || room.pricePerDay < parseInt(search, 10)
+=======
+<<<<<<< HEAD
+      rooms.filter((room) =>
+        room.category.toLowerCase().includes(search.toLowerCase())
+=======
+      rooms.filter(
+        (room) =>
+          room.category.toLowerCase().includes(search.toLowerCase()) 
+          // || room.pricePerDay < parseInt(search, 10)
+>>>>>>> 8ca6add57e7923911b3e0e517138ae76bc2c4fd3
+>>>>>>> 08298f13a48fa32c76194a29f52dd30bb42555c8
       )
     );
   }, [search, rooms]);
@@ -44,7 +56,10 @@ function Booking() {
   return (
     <>
       <Navbar />
+<<<<<<< HEAD
       <br />
+=======
+>>>>>>> 08298f13a48fa32c76194a29f52dd30bb42555c8
       <h1>Search Rooms</h1>
       {/* <div className="col-sm-6 offset-sm-5">
         <label className="form-lable h4">Search</label>
@@ -56,18 +71,28 @@ function Booking() {
         />
       </div> */}
       <div className="col-sm-6 offset-sm-5">
+<<<<<<< HEAD
         <label align="center" weight="bold">
           Select Room Type
         </label>
+=======
+        <label>Select Room Type</label>
+>>>>>>> 08298f13a48fa32c76194a29f52dd30bb42555c8
         <select
           className="form-control"
           onChange={(e) => setSearch(e.target.value)}
         >
+<<<<<<< HEAD
           <span></span>
           <option hidden>Room Type</option>
           <option>Single</option>
           <option>Double</option>
           <option>Family</option>
+=======
+          <option hidden>Room Type</option>
+          <option>Single</option>
+          <option>Luxury</option>
+>>>>>>> 08298f13a48fa32c76194a29f52dd30bb42555c8
         </select>
       </div>
 

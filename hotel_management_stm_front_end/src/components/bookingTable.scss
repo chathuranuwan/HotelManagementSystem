@@ -1,10 +1,15 @@
+<<<<<<< HEAD
 .table212 {
+=======
+.table {
+>>>>>>> 08298f13a48fa32c76194a29f52dd30bb42555c8
   border-radius: 20px;
   margin: 20px;
   display: flex;
   align-content: center;
   max-width: 1500px;
 
+<<<<<<< HEAD
   .cellWrapper {
     display: flex;
     align-items: center;
@@ -54,10 +59,79 @@
         color: crimson;
         border: 1px solid rgba(220, 20, 60, 0.6);
         cursor: pointer;
+=======
+    .cellWrapper {
+      display: flex;
+      align-items: center;
+  
+      .image {
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        margin-right: 10px;
+        object-fit: cover;
+      }
+    }
+
+    .tableHead{
+
+      background-color: rgb(0, 255, 157);
+      align-items: center;
+    }
+
+    .tableCell{
+      width: fit-content;
+      align-content: center;
+      
+      .cellAction {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+    
+        .approveButton {
+          padding: 2px 5px;
+          border-radius: 5px;
+          color: darkblue;
+          border: 1px solid rgba(0, 0, 139, 0.596);
+          cursor: pointer;
+        }
+
+        .declineButton {
+          padding: 2px 5px;
+          border-radius: 5px;
+          color: greenyellow;
+          border: 1px solid rgba(7, 139, 0, 0.596);
+          cursor: pointer;
+        }
+        
+        .deleteButton {
+          padding: 2px 5px;
+          border-radius: 5px;
+          color: crimson;
+          border: 1px solid rgba(220, 20, 60, 0.6);
+          cursor: pointer;
+        }
+      }
+
+    }
+  
+    .status {
+      padding: 5px;
+      border-radius: 5px;
+  
+      &.Approved {
+        color: green;
+        background-color: rgba(0, 128, 0, 0.151);
+      }
+      &.Pending {
+        color: goldenrod;
+        background-color: rgba(189, 189, 3, 0.103);
+>>>>>>> 08298f13a48fa32c76194a29f52dd30bb42555c8
       }
     }
   }
 
+<<<<<<< HEAD
   .roomStatus {
     padding: 5px;
     border-radius: 5px;
@@ -84,3 +158,12 @@
   color: rgb(11, 11, 87);
   margin: 20px;
 }
+=======
+  .heading{
+    font-size: 20px;
+    font-weight: bold;
+    font-family: sans-serif;
+    color: rgb(11, 11, 87);
+    margin: 20px;
+  }
+>>>>>>> 08298f13a48fa32c76194a29f52dd30bb42555c8
