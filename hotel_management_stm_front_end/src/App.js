@@ -23,13 +23,15 @@ import Booking from "./components/Booking";
 import BookedCustomerDetails from "./components/BookedCustomerDetails";
 import BookingTable from "./components/BookingTable";
 import OrderedList from "./components/OrderedList";
+import Test from "./components/Test";
+import CustomerViewBooking from "./components/CustomerViewBooking";
 
 function App() {
   return (
     <>
       <Router>
         <Routes>
-          <Route path="/nav" element={<Navbar />} />
+          <Route exact path="/nav" element={<Navbar />} />
           <Route path="/myorders" element={<OrderedList />} />
           <Route path="/" element={<LandingPage />} />
           <Route path="/Home" exact element={<Home />} />
@@ -51,9 +53,13 @@ function App() {
 
           <Route path="/rooms" element={<RoomsData />} />
           <Route path="/employees" element={<EmployeesData />} />
-          <Route path="/booking" element={<Booking />} />
+
           <Route path="/booked" element={<BookedCustomerDetails />} />
           <Route path="/listedRooms" element={<BookingTable />} />
+          <Route path="/test" element={<Test />} />
+
+          <Route path="/booking" element={<Test />} />
+          <Route path="/bookingStatus" element={<CustomerViewBooking />} />
         </Routes>
       </Router>
     </>
